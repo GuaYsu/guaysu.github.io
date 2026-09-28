@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650" viewBox="0 0 1100 650">
+  <rect width="1100" height="650" fill="#ffffff"/>
+  <style>
+    .t{font-family:Arial,"Noto Sans SC","Microsoft YaHei",sans-serif;fill:#222}
+    .h{font-size:30px;font-weight:700}.b{font-size:21px}.s{font-size:18px;fill:#555}
+    .axis{stroke:#222;stroke-width:2}.grid{stroke:#ddd;stroke-width:1}
+    .ref{stroke:#222;stroke-width:4;fill:none}
+    .coarse{stroke:#8a4f2c;stroke-width:3;fill:none;stroke-dasharray:12 10}
+    .fine{stroke:#315a7d;stroke-width:3;fill:none}
+  </style>
+  <text x="65" y="55" class="t h">数值解随网格加密向参考解收敛（示意）</text>
+  <line x1="110" y1="555" x2="1015" y2="555" class="axis"/>
+  <line x1="110" y1="95" x2="110" y2="555" class="axis"/>
+  <line x1="110" y1="440" x2="1015" y2="440" class="grid"/>
+  <line x1="110" y1="325" x2="1015" y2="325" class="grid"/>
+  <line x1="110" y1="210" x2="1015" y2="210" class="grid"/>
+  <text x="560" y="615" text-anchor="middle" class="t b">频率（对数尺度，示意）</text>
+  <text x="35" y="330" transform="rotate(-90 35 330)" text-anchor="middle" class="t b">归一化响应</text>
+
+  <path d="M120 450 C230 445,300 410,370 340 C445 264,510 185,600 205 C700 225,760 320,840 365 C900 400,960 410,1005 408" class="ref"/>
+  <path d="M120 472 C220 465,305 420,378 355 C450 287,520 164,610 225 C700 275,758 345,840 390 C915 432,965 428,1005 425" class="coarse"/>
+  <path d="M120 454 C230 448,301 412,372 344 C445 270,512 190,602 209 C700 230,760 325,840 370 C900 405,960 414,1005 412" class="fine"/>
+
+  <line x1="690" y1="118" x2="750" y2="118" class="ref"/><text x="765" y="125" class="t s">解析 / 高精度参考解</text>
+  <line x1="690" y1="150" x2="750" y2="150" class="coarse"/><text x="765" y="157" class="t s">较粗网格</text>
+  <line x1="690" y1="182" x2="750" y2="182" class="fine"/><text x="765" y="189" class="t s">加密网格</text>
+  <text x="110" y="590" class="t s">图中曲线仅说明收敛关系，不使用原始实验数据。</text>
+</svg>

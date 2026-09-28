@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <rect width="1200" height="420" fill="#ffffff"/>
+  <style>
+    .t{font-family:Arial,"Noto Sans SC","Microsoft YaHei",sans-serif;fill:#222}
+    .h{font-size:30px;font-weight:700}
+    .b{font-size:23px}
+    .s{font-size:19px;fill:#555}
+    .box{fill:#f7f7f7;stroke:#444;stroke-width:2}
+    .accent{fill:#eef3f8;stroke:#315a7d;stroke-width:2.5}
+    .arr{stroke:#555;stroke-width:3;fill:none;marker-end:url(#arrow)}
+  </style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#555"/></marker></defs>
+  <text x="60" y="58" class="t h">从连续模型到最终响应：误差在哪些环节进入？</text>
+  <rect x="55" y="130" rx="14" ry="14" width="190" height="110" class="accent"/>
+  <text x="150" y="178" text-anchor="middle" class="t b">连续物理模型</text>
+  <text x="150" y="210" text-anchor="middle" class="t s">控制方程与层状介质</text>
+
+  <rect x="300" y="130" rx="14" ry="14" width="190" height="110" class="box"/>
+  <text x="395" y="178" text-anchor="middle" class="t b">空间离散</text>
+  <text x="395" y="210" text-anchor="middle" class="t s">网格 / 界面</text>
+
+  <rect x="545" y="130" rx="14" ry="14" width="190" height="110" class="box"/>
+  <text x="640" y="178" text-anchor="middle" class="t b">数值场解</text>
+  <text x="640" y="210" text-anchor="middle" class="t s">线性方程组</text>
+
+  <rect x="790" y="130" rx="14" ry="14" width="190" height="110" class="box"/>
+  <text x="885" y="178" text-anchor="middle" class="t b">地表量提取</text>
+  <text x="885" y="210" text-anchor="middle" class="t s">导数 / 阻抗</text>
+
+  <rect x="1035" y="130" rx="14" ry="14" width="120" height="110" class="accent"/>
+  <text x="1095" y="178" text-anchor="middle" class="t b">响应</text>
+  <text x="1095" y="210" text-anchor="middle" class="t s">ρₐ, φ</text>
+
+  <path d="M245 185 L292 185" class="arr"/>
+  <path d="M490 185 L537 185" class="arr"/>
+  <path d="M735 185 L782 185" class="arr"/>
+  <path d="M980 185 L1027 185" class="arr"/>
+
+  <text x="395" y="300" text-anchor="middle" class="t s">离散误差</text>
+  <text x="640" y="300" text-anchor="middle" class="t s">求解与截断误差</text>
+  <text x="885" y="300" text-anchor="middle" class="t s">后处理误差</text>
+  <path d="M395 245 L395 275" class="arr"/>
+  <path d="M640 245 L640 275" class="arr"/>
+  <path d="M885 245 L885 275" class="arr"/>
+
+  <text x="60" y="372" class="t s">解析解提供统一基准，使这些误差可以通过控制变量逐项诊断，而不是仅凭最终曲线判断“是否合理”。</text>
+</svg>
