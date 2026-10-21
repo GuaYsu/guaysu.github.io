@@ -64,13 +64,15 @@ tags: [大地电磁, 地球物理, 自学教程, 数学基础]
 
 ## 第四阶段：推断地下结构并解释地质成因
 
-13. **[地球物理反演专题](/posts/2026/10/mt-course-07-inversion/)**：已拆为六篇，以最简单的代数和偏导数理解整套反演数学。
-   - [反演非唯一性、零空间](/posts/2026/10/mt-course-07a-inverse/)
-   - [残差、加权 RMS 与失配](/posts/2026/10/mt-course-07b-misfit/)
-   - [模型粗糙度、正则化与 Occam](/posts/2026/10/mt-course-07c-regularization/)
-   - [雅可比与灵敏度](/posts/2026/10/mt-course-07d-jacobian/)
-   - [高斯–牛顿与线搜索](/posts/2026/10/mt-course-07e-gauss-newton/)
-   - [L 曲线、棋盘格与模型可靠性](/posts/2026/10/mt-course-07f-diagnostics/)
+13. **[地球物理反演与 Occam 专题](/posts/2026/10/mt-course-07-inversion/)**：已整理为八篇循序渐进的讲义，从最简单的反问题与零空间开始，逐步推导 Gauss–Newton 和 Occam，最后学习反演验证。
+   - [反演为什么比正演难？](/posts/2026/10/mt-course-07a-inverse-problem/)
+   - [零空间和非唯一性](/posts/2026/10/mt-course-07b-nullspace/)
+   - [误差、残差与归一化 RMS](/posts/2026/10/mt-course-07c-misfit/)
+   - [雅可比矩阵与灵敏度](/posts/2026/10/mt-course-07d-jacobian/)
+   - [梯度、Hessian 与 Newton](/posts/2026/10/mt-course-07e-newton/)
+   - [Gauss–Newton 逐步推导](/posts/2026/10/mt-course-07f-gauss-newton/)
+   - [Occam、模型粗糙度与 L 曲线](/posts/2026/10/mt-course-07g-occam/)
+   - [分辨率、棋盘测试与模型可靠性](/posts/2026/10/mt-course-07h-validation/)
 14. **[读懂电性结构，并谨慎走向地质解释](/posts/2026/10/mt-course-08-interpretation/)**：矿物、流体、熔体导电机制，深部电性结构，大陆与海洋案例，以及多证据地质解释。
 
 ## 统一的数学记号
