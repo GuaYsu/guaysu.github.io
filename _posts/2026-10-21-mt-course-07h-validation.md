@@ -41,6 +41,8 @@ $$\mathrm{nRMS}=1.05.$$
 
 一个实用的方法是同时比较不同正则化权重的模型、数据拟合图与 L 曲线，而不是只盯着最终彩图的细节。
 
+![棋盘测试比较已知电性模型和恢复模型](/images/posts/mt-course/34-checkerboard-recovery.svg)
+
 ## 四、棋盘测试究竟在测什么？
 
 棋盘测试（checkerboard test）是一种人为构造“真值已知的模型”的分辨率实验。
