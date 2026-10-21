@@ -73,7 +73,16 @@ tags: [大地电磁, 地球物理, 自学教程, 数学基础]
    - [Gauss–Newton 逐步推导](/posts/2026/10/mt-course-07f-gauss-newton/)
    - [Occam、模型粗糙度与 L 曲线](/posts/2026/10/mt-course-07g-occam/)
    - [分辨率、棋盘测试与模型可靠性](/posts/2026/10/mt-course-07h-validation/)
-14. **[读懂电性结构，并谨慎走向地质解释](/posts/2026/10/mt-course-08-interpretation/)**：矿物、流体、熔体导电机制，深部电性结构，大陆与海洋案例，以及多证据地质解释。
+14. **[电性结构与地质解释专题](/posts/2026/10/mt-course-08-interpretation/)**：已拆成九篇，从岩石物性出发，逐步分析大陆、俯冲带、古裂谷、SinoProbe、西准噶尔和海洋 MT 案例，最后建立完整证据链。
+   - [电阻率、电子与离子传导](/posts/2026/10/mt-course-08a-conduction/)
+   - [Archie 定律与流体连通性](/posts/2026/10/mt-course-08b-archie/)
+   - [大陆阵列与全球地幔电性](/posts/2026/10/mt-course-08c-global-arrays/)
+   - [Cascadia 俯冲带导电异常](/posts/2026/10/mt-course-08d-cascadia/)
+   - [北美裂谷、缝合带及大陆深部成像](/posts/2026/10/mt-course-08e-northamerica/)
+   - [SinoProbe：华北和青藏高原](/posts/2026/10/mt-course-08f-sinoprobe/)
+   - [西准噶尔 MT 与高密度 AMT](/posts/2026/10/mt-course-08g-junggar-amt/)
+   - [海洋 MT：海沟、洋中脊与熔体](/posts/2026/10/mt-course-08h-marine/)
+   - [如何写有证据的地质解释](/posts/2026/10/mt-course-08i-evidence/)
 
 ## 统一的数学记号
 
@@ -89,4 +98,4 @@ tags: [大地电磁, 地球物理, 自学教程, 数学基础]
 
 [从解析解到数值解：为什么“算出来了”还不够](/posts/2026/09/analytical-vs-numerical-solution/) 详细讨论一维正演中的数值误差、网格加密、边界和收敛检验。它更适合在学完有限差分之后阅读。
 
-> **修订说明**：本系列正在进一步拆分较难的数学章节。场与复数、一维解析正演、数值正演、野外观测、数据处理和阻抗张量分析均已按零基础路径拆成小节；反演已经细化，地质解释仍将逐步扩充。保留已有章节链接，是为了让引用它们的站内文章仍然有效。
+> **修订说明**：本系列已按照零基础、循序渐进的路线完成所有主要主题的细化，从场与数学基础直到电性结构及地质解释。各单元保留原有专题链接，便于站内引用与后续修订。
