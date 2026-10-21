@@ -58,7 +58,7 @@ $$
 \end{pmatrix}}.
 $$
 
-![雅可比矩阵的行和列](/images/posts/mt-course/29-jacobian-grid.svg)
+![雅可比矩阵的行和列](/images/posts/mt-course/29-jacobian.svg)
 
 注意它的行列意义：**一行对应一条数据，一列对应一个模型参数**。这里有三条数据、两个模型参数，所以 $\mathbf J$ 有三行、两列。
 
@@ -172,4 +172,4 @@ $\mathbf e_k$ 是第 $k$ 个位置为 1、其余位置为 0 的向量，所以 $
 2. 雅可比有 100 行、20 列，表示多少条数据和多少个参数？答：100 条数据、20 个参数。
 3. 为什么要反复更新雅可比？因为真实正演通常非线性，模型改变以后局部导数也可能改变。
 
-[下一节：从梯度走到高斯–牛顿更新](/posts/2026/10/mt-course-07e-gauss-newton/) · [返回专题目录](/posts/2026/10/mt-course-07-inversion/)
+[下一节：从梯度走到高斯–牛顿更新](/posts/2026/10/mt-course-07e-newton/) · [返回专题目录](/posts/2026/10/mt-course-07-inversion/)
