@@ -7,6 +7,20 @@ tags: [大地电磁, 地球物理反演, 最小二乘, Occam]
 ---
 {% include mt-course-math.html %}
 
+## 循序渐进的六篇反演数学教程
+
+1. [01｜为什么反演会有很多答案？](/posts/2026/10/mt-course-07a-inverse/)：零空间、存在性、唯一性与稳定性。
+2. [02｜从残差到加权 RMS](/posts/2026/10/mt-course-07b-misfit/)：误差和数据失配。
+3. [03｜模型粗糙度与正则化](/posts/2026/10/mt-course-07c-regularization/)：Occam 的约束思想。
+4. [04｜雅可比矩阵到底是什么？](/posts/2026/10/mt-course-07d-jacobian/)：从数字表到模型敏感性。
+5. [05｜梯度、Hessian 与 Gauss–Newton](/posts/2026/10/mt-course-07e-gauss-newton/)：如何计算模型更新。
+6. [06｜L 曲线与恢复试验](/posts/2026/10/mt-course-07f-diagnostics/)：如何判断模型是否可信。
+
+建议从第一篇开始；下方保留原先的浓缩概览，便于学完后整体复习。
+
+---
+
+
 ## 1. 一个不能忽略的事实：反演可能有许多解
 
 ![正演与反演](/images/posts/mt-course/05-forward-inverse.svg)
