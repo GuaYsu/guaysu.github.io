@@ -81,7 +81,7 @@ $$
 $$
 \frac{\partial}{\partial y}\left(\frac1\sigma\frac{\partial H_x}{\partial y}\right)
 +\frac{\partial}{\partial z}\left(\frac1\sigma\frac{\partial H_x}{\partial z}\right)
--i\omega\mu_0H_x=0.
++i\omega\mu_0H_x=0.
 $$
 
 为什么这里电导率出现在导数里面？因为它随空间位置变化。如果直接把 $1/\sigma$ 移到导数外，就忽略了材料界面及横向变化的作用。这个公式帮助我们看清 TE/TM 数学结构不同的原因。它的详细数值离散需要根据未知量所在的网格位置与界面条件制定，不能直接拿 TE 的五点系数套用。
