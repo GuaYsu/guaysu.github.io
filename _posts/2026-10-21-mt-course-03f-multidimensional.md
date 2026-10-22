@@ -72,17 +72,52 @@ $$
 
 对电导率随 $y,z$ 变化的 TM 情形，在假设磁导率常数、忽略位移电流时，可以从
 
-$$
+$
 \nabla\times\mathbf H=\sigma\mathbf E
-$$
+$
 
-把 $\mathbf E$ 表示为磁场导数，再代入法拉第定律，得到类似
+得到两个电场分量：
 
-$$
+$
+E_y=\frac1\sigma\frac{\partial H_x}{\partial z},
+\qquad
+E_z=-\frac1\sigma\frac{\partial H_x}{\partial y}.
+$
+
+为什么第一个式子是正号，第二个是负号？回忆旋度的分量公式：
+
+$
+(\nabla\times\mathbf H)_y=\frac{\partial H_x}{\partial z},
+\qquad
+(\nabla\times\mathbf H)_z=-\frac{\partial H_x}{\partial y}.
+$
+
+把它们代入法拉第定律的 $x$ 分量：
+
+$
+\frac{\partial E_z}{\partial y}-\frac{\partial E_y}{\partial z}
+=-i\omega\mu_0H_x.
+$
+
+于是
+
+$
+-\frac{\partial}{\partial y}\left(\frac1\sigma\frac{\partial H_x}{\partial y}\right)
+-\frac{\partial}{\partial z}\left(\frac1\sigma\frac{\partial H_x}{\partial z}\right)
+=-i\omega\mu_0H_x.
+$
+
+两边乘以 $-1$，再把右侧移到左侧：
+
+$
+\boxed{
 \frac{\partial}{\partial y}\left(\frac1\sigma\frac{\partial H_x}{\partial y}\right)
 +\frac{\partial}{\partial z}\left(\frac1\sigma\frac{\partial H_x}{\partial z}\right)
-+i\omega\mu_0H_x=0.
-$$
+-i\omega\mu_0H_x=0.
+}
+$
+
+**最后一项是负号**。它和本系列统一采用的 $e^{i\omega t}$ 时间约定一致。若改用 $e^{-i\omega t}$，该符号才会反过来；两种时间约定不能混用。
 
 为什么这里电导率出现在导数里面？因为它随空间位置变化。如果直接把 $1/\sigma$ 移到导数外，就忽略了材料界面及横向变化的作用。这个公式帮助我们看清 TE/TM 数学结构不同的原因。它的详细数值离散需要根据未知量所在的网格位置与界面条件制定，不能直接拿 TE 的五点系数套用。
 
