@@ -1,5 +1,5 @@
 ---
-title: "反演入门 03｜为什么还要惩罚模型：正则化与 Occam 思想"
+title: "旧版存档｜反演入门 03｜为什么还要惩罚模型：正则化与 Occam 思想"
 date: 2026-10-21
 permalink: /posts/2026/10/mt-course-07c-regularization/
 excerpt: "从相邻数字差多少理解模型粗糙度、正则化权重、先验模型与 Occam 的平滑约束。"
