@@ -1,5 +1,5 @@
 ---
-title: "反演入门 05｜高斯–牛顿法为什么要解一个矩阵方程？"
+title: "旧版存档｜反演入门 05｜高斯–牛顿法为什么要解一个矩阵方程？"
 date: 2026-10-21
 permalink: /posts/2026/10/mt-course-07e-gauss-newton/
 excerpt: "从抛物线最低点、梯度和曲率学起，一步一步推导普通牛顿法、Gauss–Newton 与正则化模型更新。"
