@@ -19,7 +19,7 @@ $$
 
 ![同一个电场在不同坐标系中的分量](/images/posts/mt-course/22-coordinate-rotation.svg)
 
-设一根箭头指向东北方，长度为 $\sqrt2$。若 $x$ 指东、$y$ 指北，它有分量
+设一根箭头指向东北方，长度为 $\sqrt2$。若 $x$ 指北、$y$ 指东，它有分量
 
 $$\mathbf v=\begin{pmatrix}1\\1\end{pmatrix}.$$
 
@@ -29,7 +29,7 @@ $$\mathbf v=\begin{pmatrix}1\\1\end{pmatrix}.$$
 
 ## 二、旋转矩阵从两个投影得到
 
-设新坐标轴相对旧坐标旋转角度 $\theta$，选定如下被动坐标变换约定：
+图中的横纵轴用于说明抽象的二维分量投影，不对应纸面上的地理东、西方向。全系列仍采用 $x$ 北、$y$ 东、$z$ 下的右手坐标系。设新坐标轴相对旧坐标旋转角度 $\theta$，选定如下被动坐标变换约定：
 
 $$
 \mathbf R(\theta)=
