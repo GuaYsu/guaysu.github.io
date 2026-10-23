@@ -17,72 +17,36 @@ tags: [大地电磁, 地球物理, 自学教程, 数学基础]
 
 ![从天然电磁场观测到地下电性结构与地质解释的流程](/images/posts/mt-course/06-data-workflow.svg)
 
-## 第一阶段：让抽象物理量变得可见
+## 第一阶段：把抽象物理量变得可理解
 
-1. **[场究竟是什么：从风场到地表电磁观测](/posts/2026/10/mt-course-01-field-wave/)**：标量、矢量、场的空间与时间依赖，$E_x$ 下标的意义，场和波的区别。
-2. **[三角函数里的振幅、频率与相位](/posts/2026/10/mt-course-01b-trigonometry/)**：弧度、周期、Hz、角频率以及相位超前和滞后，带完整数字例题。
-3. **[复数从哪里来：把振幅和相位装在一起](/posts/2026/10/mt-course-01c-complex/)**：$i^2=-1$、复平面、模长、辐角、欧拉公式、复振幅和复指数求导。
+1. **[场、三角函数与复数：电磁学的语言](/posts/2026/10/mt-course-01-foundations/)**：场和波的区别、振幅与相位、复平面和复指数。原三篇合一。
+2. **[导数、旋度与麦克斯韦方程](/posts/2026/10/mt-course-02a-maxwell-math/)**：从变化率与小回路开始，完整推导一维控制方程与指数解。
+3. **[阻抗、45°相位、趋肤深度与层状正演](/posts/2026/10/mt-course-02b-layered-earth/)**：从半空间阻抗一步步走到多层递推。
 
-先把这三篇弄清楚，再进入真正的微分方程。不要跳过后面的计算题：能看懂讲解和能够自己做一次，是两件事。
+## 第二阶段：正演、野外观测与数据处理
 
-## 第二阶段：研究电磁场为什么会这样变化
+4. **[有限差分基础：网格、差分与矩阵](/posts/2026/10/mt-course-03a-numerical-grid/)**：均匀和非均匀网格、误差阶及稀疏线性方程组。
+5. **[数值正演进阶：边界、二维三维与灵敏度](/posts/2026/10/mt-course-03b-numerical-forward/)**：边界条件、TE/TM 模式和薄层效应。
+6. **[野外观测、仪器与测站设计](/posts/2026/10/mt-course-04-field-observation/)**：五通道、偶极电压、测站布置、质量控制与安全。
+7. **[时间序列与频谱：傅里叶、采样和切窗](/posts/2026/10/mt-course-05a-fourier-sampling/)**：信号分解、混叠、FFT 与频谱泄漏。
+8. **[复数阻抗估计：最小二乘与稳健回归](/posts/2026/10/mt-course-05b-impedance-estimation/)**：频域阻抗估计、噪声偏差、远参考和稳健统计。
 
-4. **[导数与偏导数：从坡度开始](/posts/2026/10/mt-course-02a-derivatives/)**：逐步计算变化率，理解二阶导数。
-5. **[旋度与麦克斯韦方程](/posts/2026/10/mt-course-02b-curl/)**：从小回路开始理解空间旋度。
-6. **[一维控制方程与指数解](/posts/2026/10/mt-course-02c-1d-ode/)**：消元、两次求导、指数函数试解。
-7. **[阻抗、45° 相位与趋肤深度](/posts/2026/10/mt-course-02d-impedance/)**：从电磁场求比值。
-8. **[层状地球的阻抗递推](/posts/2026/10/mt-course-02e-layers/)**：界面条件、双曲正切与自下而上递推。
-9. **[有限差分与二维、三维数值正演专题](/posts/2026/10/mt-course-03-finite-difference/)**：已经拆为七节，依次讲网格、三点差分、非均匀离散、矩阵、边界、二维/三维与灵敏度。
-   - [连续地下为什么要切成网格？](/posts/2026/10/mt-course-03a-grid/)
-   - [三点差分与泰勒展开](/posts/2026/10/mt-course-03b-differences/)
-   - [非均匀网格与电磁方程离散](/posts/2026/10/mt-course-03c-nonuniform/)
-   - [矩阵与线性方程组](/posts/2026/10/mt-course-03d-matrix/)
-   - [边界条件与数值误差](/posts/2026/10/mt-course-03e-boundaries/)
-   - [二维、三维有限差分](/posts/2026/10/mt-course-03f-multidimensional/)
-   - [薄层敏感性与时域电磁场](/posts/2026/10/mt-course-03g-sensitivity/)
+## 第三阶段：从阻抗张量认识地下结构
 
-## 第三阶段：从真实观测中获得可靠响应
+9. **[阻抗张量、地质维度与坐标旋转](/posts/2026/10/mt-course-06a-tensor-dimensions/)**：矩阵、1D/2D/3D、TE/TM 与旋转。
+10. **[旋转不变量、Groom–Bailey 畸变与相位张量](/posts/2026/10/mt-course-06b-tensor-interpretation/)**：WAL 指标、浅部畸变、矩阵求逆和相位张量椭圆。
+11. **[地质走向、极坐标图与静态位移](/posts/2026/10/mt-course-06c-strike-static/)**：走向角歧义、相位、视电阻率曲线与 MTpy 工作流。
 
-10. **[野外观测专题](/posts/2026/10/mt-course-04-field/)**：已拆为两篇，从电压表与五通道入手，再讲测站设计和质量控制。
-   - [五个通道究竟在测什么？](/posts/2026/10/mt-course-04a-measure/)
-   - [从研究目标到测站布设](/posts/2026/10/mt-course-04b-station/)
-11. **[数据处理专题](/posts/2026/10/mt-course-05-processing/)**：已拆为五篇，从正弦波叠加走向复杂的稳健阻抗估计。
-   - [傅里叶分解与频率投影](/posts/2026/10/mt-course-05a-fourier/)
-   - [采样、混叠与 FFT](/posts/2026/10/mt-course-05b-sampling/)
-   - [切窗、去趋势与频谱泄漏](/posts/2026/10/mt-course-05c-windowing/)
-   - [最小二乘阻抗估计](/posts/2026/10/mt-course-05d-least-squares/)
-   - [远参考与稳健回归](/posts/2026/10/mt-course-05e-robust/)
-12. **[阻抗张量与数据分析专题](/posts/2026/10/mt-course-06-analysis/)**：已拆成八篇，从矩阵和旋转开始，深入维度、畸变、相位张量与静态位移。
-   - [阻抗张量和 tipper](/posts/2026/10/mt-course-06a-tensor/)
-   - [1D、2D、3D 与 TE/TM](/posts/2026/10/mt-course-06b-dimensionality/)
-   - [坐标旋转与不变量](/posts/2026/10/mt-course-06c-rotation/)
-   - [WAL 不变量与 skew](/posts/2026/10/mt-course-06d-invariants/)
-   - [GB 畸变分解](/posts/2026/10/mt-course-06e-distortion/)
-   - [相位张量与椭圆](/posts/2026/10/mt-course-06f-phase-tensor/)
-   - [走向分析方法](/posts/2026/10/mt-course-06g-strike/)
-   - [静态位移与 MTpy](/posts/2026/10/mt-course-06h-static-shift/)
+## 第四阶段：从观测反推地下并作出地质解释
 
-## 第四阶段：推断地下结构并解释地质成因
+12. **[反问题、零空间、误差与 RMS](/posts/2026/10/mt-course-07a-inverse-theory/)**：为什么反演可能不唯一、如何定义合理拟合。
+13. **[雅可比、Newton 与 Gauss–Newton 全推导](/posts/2026/10/mt-course-07b-optimization/)**：从导数和泰勒展开到正则化更新方程。
+14. **[Occam 正则化与模型可靠性](/posts/2026/10/mt-course-07c-occam-resolution/)**：模型粗糙度、L 曲线、棋盘与异常恢复测试。
+15. **[岩石导电机制、Archie 定律与全球电性](/posts/2026/10/mt-course-08a-rock-physics/)**：电性机制、连通流体、全球地幔与大陆阵列。
+16. **[大陆地质案例：Cascadia、北美裂谷、华北与青藏](/posts/2026/10/mt-course-08b-continental-cases/)**：不同构造条件下导电异常的解释。
+17. **[西准噶尔、海洋 MT 与地质解释证据链](/posts/2026/10/mt-course-08c-field-cases/)**：高密度 AMT、洋中脊及完整的地质解释练习。
 
-13. **[地球物理反演与 Occam 专题](/posts/2026/10/mt-course-07-inversion/)**：已整理为八篇循序渐进的讲义，从最简单的反问题与零空间开始，逐步推导 Gauss–Newton 和 Occam，最后学习反演验证。
-   - [反演为什么比正演难？](/posts/2026/10/mt-course-07a-inverse-problem/)
-   - [零空间和非唯一性](/posts/2026/10/mt-course-07b-nullspace/)
-   - [误差、残差与归一化 RMS](/posts/2026/10/mt-course-07c-misfit/)
-   - [雅可比矩阵与灵敏度](/posts/2026/10/mt-course-07d-jacobian/)
-   - [梯度、Hessian 与 Newton](/posts/2026/10/mt-course-07e-newton/)
-   - [Gauss–Newton 逐步推导](/posts/2026/10/mt-course-07f-gauss-newton/)
-   - [Occam、模型粗糙度与 L 曲线](/posts/2026/10/mt-course-07g-occam/)
-   - [分辨率、棋盘测试与模型可靠性](/posts/2026/10/mt-course-07h-validation/)
-14. **[电性结构与地质解释专题](/posts/2026/10/mt-course-08-interpretation/)**：已拆成九篇，从岩石物性出发，逐步分析大陆、俯冲带、古裂谷、SinoProbe、西准噶尔和海洋 MT 案例，最后建立完整证据链。
-   - [电阻率、电子与离子传导](/posts/2026/10/mt-course-08a-conduction/)
-   - [Archie 定律与流体连通性](/posts/2026/10/mt-course-08b-archie/)
-   - [大陆阵列与全球地幔电性](/posts/2026/10/mt-course-08c-global-arrays/)
-   - [Cascadia 俯冲带导电异常](/posts/2026/10/mt-course-08d-cascadia/)
-   - [北美裂谷、缝合带及大陆深部成像](/posts/2026/10/mt-course-08e-northamerica/)
-   - [SinoProbe：华北和青藏高原](/posts/2026/10/mt-course-08f-sinoprobe/)
-   - [西准噶尔 MT 与高密度 AMT](/posts/2026/10/mt-course-08g-junggar-amt/)
-   - [海洋 MT：海沟、洋中脊与熔体](/posts/2026/10/mt-course-08h-marine/)
-   - [如何写有证据的地质解释](/posts/2026/10/mt-course-08i-evidence/)
+**关于合并：** 课程由几十篇短文整合为上面的 17 篇完整讲义。每篇均带有篇内目录，原章节的正文、推导、例题和插图完整保留。以前的章节地址跳转到合并后对应的位置；原始 Markdown 在仓库源码归档目录保存，方便历史核对。
 
 ## 统一的坐标与时间约定
 
