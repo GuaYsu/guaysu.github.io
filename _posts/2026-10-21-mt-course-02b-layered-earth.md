@@ -191,7 +191,7 @@ $$
 还可以顺手做一次**单位检查**，看看公式有没有在量纲上说得通。阻抗 $Z=E/H$ 的单位是
 
 $
-[Z]=\frac{\mathrm{V/m}}{\mathrm{A/m}}=\frac{\mathrm VA}{\mathrm A^2}=\Omega.
+[Z]=\frac{\mathrm{V/m}}{\mathrm{A/m}}=\frac{\mathrm V}{\mathrm A}=\Omega.
 $
 
 这里方括号表示“某个量的单位”；$\mathrm{V/A}=\Omega$。同时，角频率 $\omega$ 的单位是 $\mathrm{s^{-1}}$，真空磁导率 $\mu_0$ 的单位可写成 $\Omega\cdot\mathrm{s/m}$，所以
