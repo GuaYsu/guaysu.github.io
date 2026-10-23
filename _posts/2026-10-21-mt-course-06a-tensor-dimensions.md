@@ -8,8 +8,6 @@ tags: [大地电磁, 阻抗张量, 数学基础]
 ---
 {% include mt-course-math.html %}
 
-完整合并原有专题，目录可跳转到各原章节。
-
 ## 本篇目录
 - [阻抗张量与数据分析｜从矩阵入门到相位张量、走向和静态位移](#sec-06-analysis)
 - [数据分析 01｜阻抗张量为什么是四个复数：从矩阵乘法开始](#sec-06a-tensor)
@@ -24,7 +22,7 @@ tags: [大地电磁, 阻抗张量, 数学基础]
 
 上一专题，我们已经从五路时间序列提取傅里叶系数，并估计出每个频率的复数阻抗张量。现在真正有意思的问题出现了：**如何从四个复数判断地下是怎样的结构？测量方向是否正确？近地表的小型异常是否改变了我们想研究的区域响应？**
 
-这一专题把曾经挤在一篇文章里的内容拆成八个逐步深入的小单元。先用数字和矩阵乘法做简单练习，再走向旋转不变量、相位张量与实际诊断。
+这一章先从数字和矩阵乘法练起，再认识地下维度与坐标旋转。下一章会用这些工具分析不变量、畸变和相位张量。
 
 ![阻抗张量把两个磁场分量映射为两个电场分量](/images/posts/mt-course/21-impedance-matrix.svg)
 
@@ -39,19 +37,19 @@ tags: [大地电磁, 阻抗张量, 数学基础]
 3. **[为什么张量旋转要左右各乘一个矩阵？](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06c-rotation)**  
    从向量投影、三角函数与转置入手，完整推导 $\mathbf Z'=\mathbf R\mathbf Z\mathbf R^T$，再介绍迹、反迹与行列式。
 
-4. **[WAL 不变量与维度判断](/posts/2026/10/mt-course-06d-invariants/)**  
+4. **[WAL 不变量与维度判断](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06d-invariants)**  
    先把四个复阻抗拆成八个实数，再组合旋转不变量，认识 $I_1$ 至 $I_7$、$Q$ 和经典 Swift skew。
 
-5. **[Groom–Bailey 畸变从哪里来？](/posts/2026/10/mt-course-06e-distortion/)**  
+5. **[Groom–Bailey 畸变从哪里来？](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06e-distortion)**  
    浅部导体、界面电荷、twist、shear、anisotropy 与 site gain 的物理意义及不可辨识问题。
 
-6. **[相位张量：为什么求逆后畸变能抵消？](/posts/2026/10/mt-course-06f-phase-tensor/)**  
+6. **[相位张量：为什么求逆后畸变能抵消？](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06f-phase-tensor)**  
    手算二阶逆矩阵，推导 $\boldsymbol\Phi=\mathbf X^{-1}\mathbf Y$，理解相位张量椭圆及偏斜角。
 
-7. **[如何估计地质走向？](/posts/2026/10/mt-course-06g-strike/)**  
+7. **[如何估计地质走向？](/posts/2026/10/mt-course-06c-strike-static/#sec-06g-strike)**  
    Swift/Bahr/WAL、peanut 极坐标图与相位张量方位，认识角度歧义、噪声与频率变化。
 
-8. **[静态位移为什么会骗过反演？](/posts/2026/10/mt-course-06h-static-shift/)**  
+8. **[静态位移为什么会骗过反演？](/posts/2026/10/mt-course-06c-strike-static/#sec-06h-static-shift)**  
    由 $Z_{\rm obs}=gZ_{\rm reg}$ 推导 $\rho_{a,\rm obs}=g^2\rho_{a,\rm reg}$，比较 TE/TM 畸变，学习诊断与 MTpy 工作流。
 
 ### 为什么这些内容要在反演之前学？
@@ -60,7 +58,7 @@ tags: [大地电磁, 阻抗张量, 数学基础]
 
 所以张量分析的任务是：先明确数据代表什么、与怎样的地下维度假设相容，以及哪些干扰和系统性畸变需要纳入不确定度或额外约束。
 
-到这里学会的复数、矩阵、旋转、偏导与统计误差思想，在[下一专题：反演与 Occam](/posts/2026/10/mt-course-07-inversion/)都会继续发挥作用。
+到这里学会的复数、矩阵、旋转、偏导与统计误差思想，在[下一专题：反演与 Occam](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)都会继续发挥作用。
 
 [返回全系列目录](/posts/2026/10/mt-course/)。
 
@@ -411,4 +409,4 @@ $$
 2. 为什么 $\mathbf Z'$ 不是简单的 $\mathbf R\mathbf Z$？因为磁场输入也要变换坐标。
 3. 迹与反迹相同是否足以证明两个阻抗张量物理相同？不够，它们只包含部分信息。
 
-[下一节：WAL 不变量与维度判断](/posts/2026/10/mt-course-06d-invariants/) · [专题目录](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis)
+[下一节：WAL 不变量与维度判断](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06d-invariants) · [专题目录](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis)

@@ -8,8 +8,6 @@ tags: [大地电磁, 数学基础, 自学教程]
 ---
 {% include mt-course-math.html %}
 
-原有内容全文保留，按内部目录逐单元阅读。
-
 ## 本篇目录
 - [地质解释 07｜西准噶尔为什么既要长周期 MT 又要高密度 AMT？](#sec-08g-junggar-amt)
 - [地质解释 08｜海底也能做 MT：海水、洋中脊与部分熔融](#sec-08h-marine)
@@ -99,7 +97,7 @@ AMT 较高的观测频率对较浅部结构通常更敏感，因此可以帮助�
 2. 将三维模型中所有超过 $5000\ \Omega\cdot\mathrm m$ 的体积画在一起，能否认为它们一定属于同一个侵入体？不能，等值面只按物性阈值分组。
 3. 一个导电异常与某条古板片位置相近，就证明那里有古洋壳吗？不能，仍要结合其他物性和地质证据。
 
-[下一节：海洋 MT 与洋中脊、俯冲海沟](/posts/2026/10/mt-course-08c-field-cases/#sec-08h-marine) · [返回专题目录](/posts/2026/10/mt-course-08-interpretation/)
+[下一节：海洋 MT 与洋中脊、俯冲海沟](/posts/2026/10/mt-course-08c-field-cases/#sec-08h-marine) · [返回专题目录](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
 
 
 ---
@@ -179,7 +177,7 @@ AMT 较高的观测频率对较浅部结构通常更敏感，因此可以帮助�
 
 **③** 为什么增加海底站点可能改善俯冲带模型？因为观测覆盖延伸到离岸目标附近，有助于约束原本只靠陆地站点间接推测的空间结构。
 
-[最后一节：完整的地质解释证据链](/posts/2026/10/mt-course-08c-field-cases/#sec-08i-evidence) · [返回专题目录](/posts/2026/10/mt-course-08-interpretation/)
+[最后一节：完整的地质解释证据链](/posts/2026/10/mt-course-08c-field-cases/#sec-08i-evidence) · [返回专题目录](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
 
 
 ---
@@ -298,4 +296,4 @@ AMT 较高的观测频率对较浅部结构通常更敏感，因此可以帮助�
 
 对于地质学研究者而言，真正重要的不只是能运行反演程序，而是知道它为什么给出某个模型、什么结构被数据要求、什么结构主要来自约束，以及怎样把电阻率转化为可以讨论和检验的地质假说。
 
-[返回全系列目录](/posts/2026/10/mt-course/) · [返回地质解释专题](/posts/2026/10/mt-course-08-interpretation/)
+[返回全系列目录](/posts/2026/10/mt-course/) · [返回地质解释专题](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)

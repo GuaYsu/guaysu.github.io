@@ -8,8 +8,6 @@ tags: [大地电磁, 数学基础, 自学教程]
 ---
 {% include mt-course-math.html %}
 
-原有内容全文保留，按内部目录逐单元阅读。
-
 ## 本篇目录
 - [反演入门 04｜雅可比矩阵是什么：改动一层地下，数据会改变多少？](#sec-07d-jacobian)
 - [地球物理反演 05｜梯度和 Hessian 在干什么：从一元二次函数学 Newton 方法](#sec-07e-newton)
@@ -186,7 +184,7 @@ $\mathbf e_k$ 是第 $k$ 个位置为 1、其余位置为 0 的向量，所以 $
 2. 雅可比有 100 行、20 列，表示多少条数据和多少个参数？答：100 条数据、20 个参数。
 3. 为什么要反复更新雅可比？因为真实正演通常非线性，模型改变以后局部导数也可能改变。
 
-[下一节：从梯度走到高斯–牛顿更新](/posts/2026/10/mt-course-07b-optimization/#sec-07e-newton) · [返回专题目录](/posts/2026/10/mt-course-07-inversion/)
+[下一节：从梯度走到高斯–牛顿更新](/posts/2026/10/mt-course-07b-optimization/#sec-07e-newton) · [返回专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
 
 
 ---
@@ -359,7 +357,7 @@ Newton 型方法也不天然保证收敛到全局最佳解。初始模型、参�
 
 下一节我们把本节的 Newton 更新与前面的雅可比连接起来，得到地球物理反演里更常用的 Gauss–Newton 方法。
 
-[继续：Gauss–Newton 为什么不必完整计算二阶正演导数？](/posts/2026/10/mt-course-07b-optimization/#sec-07f-gauss-newton) · [反演专题目录](/posts/2026/10/mt-course-07-inversion/)
+[继续：Gauss–Newton 为什么不必完整计算二阶正演导数？](/posts/2026/10/mt-course-07b-optimization/#sec-07f-gauss-newton) · [反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
 
 
 ---
@@ -589,4 +587,4 @@ $$
 
 下一节再看一个更关键的问题：既然正则化已经出现，Occam 反演为何会特别强调“在满足数据拟合的模型中尽量平滑”？
 
-[继续：Occam 与正则化的完整来历](/posts/2026/10/mt-course-07g-occam/) · [反演专题目录](/posts/2026/10/mt-course-07-inversion/)
+[继续：Occam 与正则化的完整来历](/posts/2026/10/mt-course-07c-occam-resolution/#sec-07g-occam) · [反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)

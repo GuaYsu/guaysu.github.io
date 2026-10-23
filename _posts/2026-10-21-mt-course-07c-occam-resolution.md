@@ -8,8 +8,6 @@ tags: [大地电磁, 数学基础, 自学教程]
 ---
 {% include mt-course-math.html %}
 
-以下所有原章节均已全文合并，使用篇内目录直接定位。
-
 ## 本篇目录
 - [地球物理反演 07｜Occam 为什么偏爱平滑模型：从相邻两层之差开始](#sec-07g-occam)
 - [地球物理反演 08｜反演结果可信到哪一步：从 RMS 到分辨率测试](#sec-07h-validation)
@@ -219,7 +217,7 @@ $$
 
 **③** 平滑反演中出现一个 10 km 宽的低阻区，是否说明真实导电地层一定宽 10 km？不能，范围受数据分辨率与平滑约束共同影响。
 
-[下一节：反演结果怎样验证？](/posts/2026/10/mt-course-07c-occam-resolution/#sec-07h-validation) · [反演专题目录](/posts/2026/10/mt-course-07-inversion/)
+[下一节：反演结果怎样验证？](/posts/2026/10/mt-course-07c-occam-resolution/#sec-07h-validation) · [反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
 
 
 ---
@@ -227,7 +225,7 @@ $$
 <a id="sec-07h-validation"></a>
 ## 第2单元｜地球物理反演 08｜反演结果可信到哪一步：从 RMS 到分辨率测试
 
-前面七篇已经把反演数学的主体串起来了：数据失配、零空间、雅可比、Gauss–Newton 和 Occam。到这里你可能会觉得，只要把公式交给计算机，就能得到一张电阻率剖面图。
+数据失配、零空间、雅可比、Gauss–Newton 和 Occam 已经串成完整的计算链。接下来讨论结果检验：计算机给出一张电阻率剖面之后，我们究竟能信到哪一步？
 
 但反演工作的真正考验恰恰从这张彩图出现以后才开始：**怎样知道某个低阻体是数据确实需要的结构，还是算法、噪声与先验共同制造的伪影？**
 
@@ -324,4 +322,4 @@ $$\mathrm{nRMS}=1.05.$$
 
 当这些条件还没有得到验证时，合理的表述应保留不确定性，而不是让反演图替我们作出超出数据支持范围的结论。
 
-[返回反演专题目录](/posts/2026/10/mt-course-07-inversion/) · [继续：电性结构的地质解释](/posts/2026/10/mt-course-08-interpretation/)
+[返回反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion) · [继续：电性结构的地质解释](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)

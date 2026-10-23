@@ -8,8 +8,6 @@ tags: [大地电磁, 地球物理反演, 数学基础]
 ---
 {% include mt-course-math.html %}
 
-本篇全文保留原专题导读及三个基础单元，建议先手算再阅读抽象公式。
-
 ## 本篇目录
 - [地球物理反演与 Occam｜从零空间走到 Gauss–Newton 和模型验证](#sec-07-inversion)
 - [地球物理反演 01｜知道结果，为什么很难倒推出原因？](#sec-07a-inverse-problem)
@@ -41,19 +39,19 @@ tags: [大地电磁, 地球物理反演, 数学基础]
 3. **[RMS 怎么来的？](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07c-misfit)**  
    从残差、标准差与平方和开始，推导标准化 RMS 和协方差加权，理解为什么 RMS≈1 不代表模型一定真实。
 
-4. **[雅可比矩阵：改变一层，哪些数据会变？](/posts/2026/10/mt-course-07d-jacobian/)**  
+4. **[雅可比矩阵：改变一层，哪些数据会变？](/posts/2026/10/mt-course-07b-optimization/#sec-07d-jacobian)**  
    从普通偏导数走到灵敏度矩阵，理解模型扰动、有限差分求导与非线性正演的局部线性化。
 
-5. **[梯度与 Hessian：从抛物线学习 Newton 更新](/posts/2026/10/mt-course-07e-newton/)**  
+5. **[梯度与 Hessian：从抛物线学习 Newton 更新](/posts/2026/10/mt-course-07b-optimization/#sec-07e-newton)**  
    手算 $\Phi(m)=(m-3)^2$ 的一阶导数、二阶导数与更新量，并认识线搜索。
 
-6. **[Gauss–Newton：正规方程怎样一步步推出来？](/posts/2026/10/mt-course-07f-gauss-newton/)**  
+6. **[Gauss–Newton：正规方程怎样一步步推出来？](/posts/2026/10/mt-course-07b-optimization/#sec-07f-gauss-newton)**  
    从残差平方和与一阶泰勒展开出发，得到 $\mathbf J^T\mathbf J\Delta\mathbf m=-\mathbf J^T\mathbf r$，手算两次迭代，然后加入数据误差和正则化。
 
-7. **[Occam：为什么要在合理拟合中尽可能平滑？](/posts/2026/10/mt-course-07g-occam/)**  
+7. **[Occam：为什么要在合理拟合中尽可能平滑？](/posts/2026/10/mt-course-07c-occam-resolution/#sec-07g-occam)**  
    从相邻参数差分构造粗糙度，认识模型约束、目标 RMS、拉格朗日乘子、Occam 更新与 L 曲线。
 
-8. **[反演结果能信到哪一步？](/posts/2026/10/mt-course-07h-validation/)**  
+8. **[反演结果能信到哪一步？](/posts/2026/10/mt-course-07c-occam-resolution/#sec-07h-validation)**  
    近似深度映射、试错与 Monte Carlo、二维三维反演、模型伪影、棋盘测试、异常恢复和地质解释边界。
 
 ### 全部内容其实是一条运算链
@@ -87,7 +85,7 @@ $$
 
 下一专题再把稳定的电性异常放回真实地质环境中，研究其可能的物性成因。
 
-[返回全系列目录](/posts/2026/10/mt-course/) · [继续：电阻率结构与地质解释](/posts/2026/10/mt-course-08-interpretation/)
+[返回全系列目录](/posts/2026/10/mt-course/) · [继续：电阻率结构与地质解释](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
 
 
 ---
@@ -483,4 +481,4 @@ $$
 
 如果只看最后一个数字而不查看三个残差，便看不出第三条数据明显偏大。这也是为什么“达到了目标 RMS”仍不代表反演分析已经完成。
 
-[下一节：雅可比矩阵怎样计算灵敏度？](/posts/2026/10/mt-course-07d-jacobian/) · [反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
+[下一节：雅可比矩阵怎样计算灵敏度？](/posts/2026/10/mt-course-07b-optimization/#sec-07d-jacobian) · [反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)

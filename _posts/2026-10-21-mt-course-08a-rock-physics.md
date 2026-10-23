@@ -8,8 +8,6 @@ tags: [大地电磁, 地质解释, 自学教程]
 ---
 {% include mt-course-math.html %}
 
-本篇完整合并所有原章节；具体数学与地质解释均按原文保留。
-
 ## 本篇目录
 - [电性结构与地质解释｜从电子、流体到大陆与海洋 MT 案例](#sec-08-interpretation)
 - [地质解释 01｜岩石为什么能导电：从电子、离子与电阻率开始](#sec-08a-conduction)
@@ -30,7 +28,7 @@ tags: [大地电磁, 地质解释, 自学教程]
 
 ![从数据到地质解释的证据链](/images/posts/mt-course/39-multievidence.svg)
 
-我们先花两篇文章理解岩石本身为什么导电，再进入大陆和全球尺度的观测，最后分析不同构造区的真实研究案例，并通过一个虚构模型练习写出可检验的地质解释。
+本章先解释岩石导电机制与 Archie 定律，再认识大陆阵列和全球电性模型。后面的案例章节分别讨论典型构造环境，并用一个教学示例演练完整的证据链。
 
 ### 第一阶段：先理解岩石的电性从哪里来
 
@@ -47,24 +45,24 @@ tags: [大地电磁, 地质解释, 自学教程]
 
 ### 第三阶段：不同构造环境中的真实案例
 
-4. **[Cascadia：为什么俯冲带会有几条导电带？](/posts/2026/10/mt-course-08d-cascadia/)**  
+4. **[Cascadia：为什么俯冲带会有几条导电带？](/posts/2026/10/mt-course-08b-continental-cases/#sec-08d-cascadia)**  
    Juan de Fuca 板块、俯冲沉积物、变质流体、前弧与火山弧助熔，以及陆海观测联合约束。
 
-5. **[北美中大陆裂谷与大陆内部深部导体](/posts/2026/10/mt-course-08e-northamerica/)**  
+5. **[北美中大陆裂谷与大陆内部深部导体](/posts/2026/10/mt-course-08b-continental-cases/#sec-08e-northamerica)**  
    Midcontinent Rift、古缝合带、LAB，MT 与重力、磁法的互补性，以及大陆深部灵敏度。
 
-6. **[SinoProbe：华北和青藏高原如何解释深部电性？](/posts/2026/10/mt-course-08f-sinoprobe/)**  
+6. **[SinoProbe：华北和青藏高原如何解释深部电性？](/posts/2026/10/mt-course-08b-continental-cases/#sec-08f-sinoprobe)**  
    计划测点与实际站点的区别、华北克拉通三维结构、青藏高原下地壳及深部低阻带连续性检验。
 
-7. **[西准噶尔：长周期 MT 与高密度 AMT](/posts/2026/10/mt-course-08g-junggar-amt/)**  
+7. **[西准噶尔：长周期 MT 与高密度 AMT](/posts/2026/10/mt-course-08c-field-cases/#sec-08g-junggar-amt)**  
    西准噶尔长周期阵列、相位张量、感应箭头与灵敏度，Akebasitao 局部高密度阵列、岩体及断裂识别。
 
-8. **[海洋 MT：Cocos 海沟、洋中脊与上地幔部分熔融](/posts/2026/10/mt-course-08h-marine/)**  
+8. **[海洋 MT：Cocos 海沟、洋中脊与上地幔部分熔融](/posts/2026/10/mt-course-08c-field-cases/#sec-08h-marine)**  
    海水、海底地形、沉积层为何影响电磁场，海底 MT 又怎样为俯冲与地幔上涌研究提供物性信息。
 
 ### 最后一节：形成自己的地质解释方法
 
-9. **[看到一张低阻彩图，究竟应该如何解释？](/posts/2026/10/mt-course-08i-evidence/)**  
+9. **[看到一张低阻彩图，究竟应该如何解释？](/posts/2026/10/mt-course-08c-field-cases/#sec-08i-evidence)**  
    用一组明确标注为教学示例的数值，完整练习“观测数据 → 电阻率模型 → 分辨率测试 → 物性机制 → 独立证据 → 地质结论”。
 
 ### 四个读图时必须问的问题
@@ -96,7 +94,7 @@ $$
 
 前面学习的偏导数、复数、矩阵、泰勒展开和最小二乘，最终都是为了在有限数据条件下，把地下结构的推断尽可能建立在物理规律与可检验证据之上。
 
-[返回全系列总目录](/posts/2026/10/mt-course/) · [回顾反演与 Occam 专题](/posts/2026/10/mt-course-07-inversion/)
+[返回全系列总目录](/posts/2026/10/mt-course/) · [回顾反演与 Occam 专题](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
 
 
 ---
@@ -435,4 +433,4 @@ $$
 
 **③** 为什么全球电性模型常需要与地震层析成像比较？因为它们对不同的物性敏感，可以为结构与成因提供互补证据。
 
-[下一节：北美西北部俯冲带的三条导电带](/posts/2026/10/mt-course-08d-cascadia/) · [地质解释专题目录](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
+[下一节：北美西北部俯冲带的三条导电带](/posts/2026/10/mt-course-08b-continental-cases/#sec-08d-cascadia) · [地质解释专题目录](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)

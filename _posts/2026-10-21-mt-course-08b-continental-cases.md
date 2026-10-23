@@ -8,8 +8,6 @@ tags: [大地电磁, 地质解释, 自学教程]
 ---
 {% include mt-course-math.html %}
 
-本篇完整合并所有原章节；具体数学与地质解释均按原文保留。
-
 ## 本篇目录
 - [地质解释 04｜俯冲带里为什么会出现三条导电带：Cascadia 案例](#sec-08d-cascadia)
 - [地质解释 05｜古裂谷、缝合带与深部导体：北美大陆 MT 案例](#sec-08e-northamerica)
@@ -100,7 +98,7 @@ Cascadia 的相关研究提出，沿走向延伸的几条重要导电带可能�
 2. 如果板片顶界来自地震学，MT 模型沿着它出现导电异常，代表什么？两种资料在几何上相容，但仍需区分先验约束和独立证据。
 3. 为什么海上测点可能有助于约束海岸附近的构造？因为它们提供陆地阵列没有覆盖的空间观测。
 
-[下一节：中大陆裂谷与美国大陆深部结构](/posts/2026/10/mt-course-08b-continental-cases/#sec-08e-northamerica) · [返回专题目录](/posts/2026/10/mt-course-08-interpretation/)
+[下一节：中大陆裂谷与美国大陆深部结构](/posts/2026/10/mt-course-08b-continental-cases/#sec-08e-northamerica) · [返回专题目录](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
 
 
 ---
@@ -183,7 +181,7 @@ Cascadia 的相关研究提出，沿走向延伸的几条重要导电带可能�
 2. MT 和重力模型的异常边界有些偏移，是否一定说明其中一个方法算错？不一定，它们敏感的物性不同。
 3. 某深部导体删掉后 RMS 基本不变，应该怎样表述它？至少应该指出其分辨率或必要性尚不充分。
 
-[下一节：中国 SinoProbe：华北与青藏高原](/posts/2026/10/mt-course-08b-continental-cases/#sec-08f-sinoprobe) · [返回专题目录](/posts/2026/10/mt-course-08-interpretation/)
+[下一节：中国 SinoProbe：华北与青藏高原](/posts/2026/10/mt-course-08b-continental-cases/#sec-08f-sinoprobe) · [返回专题目录](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
 
 
 ---
@@ -259,4 +257,4 @@ SinoProbe 深部探测计划在相关阶段开展了长周期与宽频 MT 观测
 2. 高原下地壳低阻是否直接等于部分熔融？不能，需要物性与温压约束。
 3. 两个低阻斑块在平滑反演中连成一片，为什么应做异常分离试验？为了检验它们的连通性是否真的被数据需要。
 
-[下一节：西准噶尔与高密度 AMT](/posts/2026/10/mt-course-08g-junggar-amt/) · [返回专题目录](/posts/2026/10/mt-course-08-interpretation/)
+[下一节：西准噶尔与高密度 AMT](/posts/2026/10/mt-course-08c-field-cases/#sec-08g-junggar-amt) · [返回专题目录](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
