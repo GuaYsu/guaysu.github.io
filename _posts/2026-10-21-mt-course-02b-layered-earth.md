@@ -188,6 +188,24 @@ $$
 \boxed{\rho_a=\frac{|Z|^2}{\omega\mu_0}}.
 $$
 
+还可以顺手做一次**单位检查**，看看公式有没有在量纲上说得通。阻抗 $Z=E/H$ 的单位是
+
+$
+[Z]=\frac{\mathrm{V/m}}{\mathrm{A/m}}=\frac{\mathrm VA}{\mathrm A^2}=\Omega.
+$
+
+这里方括号表示“某个量的单位”；$\mathrm{V/A}=\Omega$。同时，角频率 $\omega$ 的单位是 $\mathrm{s^{-1}}$，真空磁导率 $\mu_0$ 的单位可写成 $\Omega\cdot\mathrm{s/m}$，所以
+
+$
+[\omega\mu_0]=\frac{\Omega}{\mathrm m},
+\qquad
+\left[\frac{|Z|^2}{\omega\mu_0}\right]
+=\frac{\Omega^2}{\Omega/\mathrm m}
+=\Omega\cdot\mathrm m.
+$
+
+它正好是电阻率的单位。今后推导了一整页却不确定有没有少乘一个参数，先检查量纲，有时比重新算一遍还快。
+
 注意下标 $a$ 是 apparent（表观）的缩写。$\rho_a$ 与真实电阻率 $\rho$ 的区别非常重要：**视电阻率是数据转换出的响应曲线，不是一份已经解好的地下分层报告**。
 
 ### 六、从复传播常数得到趋肤深度
