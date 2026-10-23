@@ -147,7 +147,7 @@ $$
 
 **②** 为什么不能把每个通道独立平滑到“好看”为止？因为过度处理可能改变电、磁场之间的振幅与相位关系，而这些关系正是后面计算阻抗所需要的。
 
-[下一节：设计和安装一个测站](/posts/2026/10/mt-course-04-field-observation/#sec-04b-station) · [野外观测目录](/posts/2026/10/mt-course-04-field-observation/#sec-04-field)
+[下一节：设计和安装一个测站](/posts/2026/10/mt-course-04-field-observation/#sec-04b-station)
 
 
 ---
@@ -223,4 +223,4 @@ $$
 
 **③** 站点时序“看上去平滑”是否等于数据质量优秀？不能。还需结合仪器响应、跨通道一致性和频域传递函数误差判断。
 
-[开始学习：时间序列如何拆成不同频率](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05a-fourier) · [野外观测目录](/posts/2026/10/mt-course-04-field-observation/#sec-04-field)
+[开始学习：时间序列如何拆成不同频率](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05a-fourier)

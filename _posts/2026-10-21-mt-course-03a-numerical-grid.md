@@ -171,7 +171,7 @@ $$
 
 **③** 如果把间距缩小十倍，是否可以宣称数值解必然精确十倍？答：不能。误差变化取决于差分阶数及其他误差是否主导。
 
-[继续：三点差分与泰勒展开](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03b-differences) · [返回数值正演目录](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference)
+[继续：三点差分与泰勒展开](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03b-differences)
 
 
 ---
@@ -350,7 +350,7 @@ $$
 2. 两点斜率从 4 变成 4，二阶变化趋势为多少？答：零。
 3. 理论上误差从 $Ch^2$ 变成 $C(h/3)^2$，约缩小至多少？答：九分之一。
 
-[下一节：非均匀网格及如何把电磁方程离散化](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03c-nonuniform) · [返回数值正演目录](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference)
+[下一节：非均匀网格及如何把电磁方程离散化](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03c-nonuniform)
 
 
 ---
@@ -509,7 +509,7 @@ $$
 
 这个数字为负，表示左边平均斜率比右边大，函数斜率随深度呈减小趋势。
 
-[下一节：为什么数值正演必然遇到矩阵](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03d-matrix) · [返回数值正演目录](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference)
+[下一节：为什么数值正演必然遇到矩阵](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03d-matrix)
 
 
 ---
@@ -697,4 +697,4 @@ $$
 
 矩阵已经有了。接下来一个关键问题是：**为什么两端可以设成 1 和 0？如果这些边界设错，解会发生什么变化？**
 
-[继续阅读：边界条件、地表磁场与数值精度](/posts/2026/10/mt-course-03b-numerical-forward/#sec-03e-boundaries) · [返回数值正演目录](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference)
+[继续阅读：边界条件、地表磁场与数值精度](/posts/2026/10/mt-course-03b-numerical-forward/#sec-03e-boundaries)

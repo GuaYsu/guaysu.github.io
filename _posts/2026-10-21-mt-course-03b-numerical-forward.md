@@ -190,7 +190,7 @@ $$
 
 **③** 网格内部很精确，就能保证地表阻抗也很精确吗？答：不能，地表导数近似可能引入单独的误差。
 
-[下一节：二维、三维网格为什么更复杂](/posts/2026/10/mt-course-03b-numerical-forward/#sec-03f-multidimensional) · [返回数值正演目录](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference)
+[下一节：二维、三维网格为什么更复杂](/posts/2026/10/mt-course-03b-numerical-forward/#sec-03f-multidimensional)
 
 
 ---
@@ -336,7 +336,7 @@ $
 
 **③** 三维网格中为什么要关心电场、磁场放在哪些位置？因为离散后的微分算子和边界连续关系，与未知量的网格存放位置直接相关。
 
-[下一节：薄层敏感性、等纵向电导与时域波动](/posts/2026/10/mt-course-03b-numerical-forward/#sec-03g-sensitivity) · [返回目录](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference)
+[下一节：薄层敏感性、等纵向电导与时域波动](/posts/2026/10/mt-course-03b-numerical-forward/#sec-03g-sensitivity)
 
 
 ---
@@ -485,4 +485,4 @@ $$
 
 到这里，数值正演与电磁响应的主要问题已经连贯地走过一遍。后续学习真正的观测信号、傅里叶变换和反演时，仍然会遇到相似的思想：**模型可以很复杂，但数据未必能辨认所有细节**。
 
-[返回数值正演目录](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference) · [返回系列总目录](/posts/2026/10/mt-course/)
+

@@ -274,7 +274,7 @@ $$
 
 **③** 为什么理想均匀半空间的 45° 相位不能当作“一切 MT 数据的标准答案”？答：它要求特定的介质模型、极化和时间约定；地下分层会改变相位。
 
-[下一节：为什么层状地下要从最深处向上递推阻抗](/posts/2026/10/mt-course-02b-layered-earth/#sec-02e-layers) · [返回课程目录](/posts/2026/10/mt-course/)
+[下一节：为什么层状地下要从最深处向上递推阻抗](/posts/2026/10/mt-course-02b-layered-earth/#sec-02e-layers)
 
 
 ---
@@ -595,4 +595,4 @@ $$
 
 至此，我们已经有了完整的一维层状地球解析正演思路。接下来进入数值正演：如果地下不再能够划分成简单的水平无限层，怎样在计算机中用网格逼近电磁场？
 
-[继续阅读：有限差分如何让计算机求解地下电磁场](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference) · [返回总目录](/posts/2026/10/mt-course/)
+[继续阅读：有限差分如何让计算机求解地下电磁场](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference)

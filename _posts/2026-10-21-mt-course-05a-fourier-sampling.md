@@ -222,7 +222,7 @@ $$
 
 **题 3：** 对真实时间序列，正频率与负频率的傅里叶系数有何关系？答：互为复共轭。
 
-[下一节：采样、混叠和 FFT](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05b-sampling) · [数据处理目录](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05-processing)
+[下一节：采样、混叠和 FFT](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05b-sampling)
 
 
 ---
@@ -376,7 +376,7 @@ DFT 的数学定义依然不变。FFT 使用复指数的重复结构减少计算
 
 **③** 为什么对 8 Hz 采样的数据，真实 7 Hz 波可能表现得像 1 Hz？因为在采样时刻两者完全重合，发生混叠。
 
-[下一节：短窗口、去趋势与频谱泄漏](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05c-windowing) · [数据处理目录](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05-processing)
+[下一节：短窗口、去趋势与频谱泄漏](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05c-windowing)
 
 
 ---
@@ -481,4 +481,4 @@ $$
 
 **③** 降采样只需要隔几个点扔掉其他数据吗？不能。通常必须先进行抗混叠滤波。
 
-[下一节：最小二乘如何从许多窗口估计阻抗](/posts/2026/10/mt-course-05b-impedance-estimation/#sec-05d-least-squares) · [数据处理目录](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05-processing)
+[下一节：最小二乘如何从许多窗口估计阻抗](/posts/2026/10/mt-course-05b-impedance-estimation/#sec-05d-least-squares)

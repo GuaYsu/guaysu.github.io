@@ -292,7 +292,7 @@ $$
 
 如果能算明白这三题，就已经为后面的微分方程做好了最关键的一项准备。下一节会介绍一种更抽象的空间导数：旋度。它也会从熟悉的“沿着一个小圈计算变化”开始。
 
-[下一节：旋度与麦克斯韦方程](/posts/2026/10/mt-course-02a-maxwell-math/#sec-02b-curl) · [课程目录](/posts/2026/10/mt-course/)
+[下一节：旋度与麦克斯韦方程](/posts/2026/10/mt-course-02a-maxwell-math/#sec-02b-curl)
 
 
 ---
@@ -507,7 +507,7 @@ $$
 
 如果你已经能够回答这两题，我们就具备下一步的条件：把两条一阶方程结合起来，得到电场随深度的二阶方程。
 
-[继续：一维控制方程为什么会出现指数解](/posts/2026/10/mt-course-02a-maxwell-math/#sec-02c-1d-ode) · [课程目录](/posts/2026/10/mt-course/)
+[继续：一维控制方程为什么会出现指数解](/posts/2026/10/mt-course-02a-maxwell-math/#sec-02c-1d-ode)
 
 
 ---
@@ -846,4 +846,4 @@ $$
 
 这个结果会直接用于下一节推导地表阻抗。
 
-[下一节：从指数解求出阻抗、相位和趋肤深度](/posts/2026/10/mt-course-02b-layered-earth/#sec-02d-impedance) · [返回课程目录](/posts/2026/10/mt-course/)
+[下一节：从指数解求出阻抗、相位和趋肤深度](/posts/2026/10/mt-course-02b-layered-earth/#sec-02d-impedance)

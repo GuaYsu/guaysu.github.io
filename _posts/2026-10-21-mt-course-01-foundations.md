@@ -452,7 +452,7 @@ $$
 
 下一节我们会借助复数，把刚才学习的振幅和相位装进同一个数学对象。那时出现 $e^{i\omega t}$ 就有来历了，而不会突然跳出一个没解释的新符号。
 
-[继续阅读：复数和欧拉公式，为什么能简化电磁学](/posts/2026/10/mt-course-01-foundations/#sec-01c-complex) · [返回总目录](/posts/2026/10/mt-course/)。
+[继续阅读：复数和欧拉公式，为什么能简化电磁学](/posts/2026/10/mt-course-01-foundations/#sec-01c-complex)
 
 
 ---
@@ -744,4 +744,4 @@ $$
 
 从这里往后，我们就可以真正进入电磁场方程了。但第一次遇到偏导数、旋度、二阶方程时仍会慢慢拆解，不必急着跳到最后的阻抗结果。
 
-[继续阅读：导数和旋度怎样进入电磁场方程](/posts/2026/10/mt-course-02a-maxwell-math/#sec-02-maxwell-forward) · [返回总目录](/posts/2026/10/mt-course/)。
+[继续阅读：导数和旋度怎样进入电磁场方程](/posts/2026/10/mt-course-02a-maxwell-math/#sec-02-maxwell-forward)

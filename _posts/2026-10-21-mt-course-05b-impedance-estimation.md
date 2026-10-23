@@ -218,7 +218,7 @@ $$
 
 **③** 为什么一个窗口不能稳定确定一般阻抗张量的一整行？因为一条复数观测方程对应两个未知复数系数。
 
-[下一节：输入磁场噪声、远参考与稳健估计](/posts/2026/10/mt-course-05b-impedance-estimation/#sec-05e-robust) · [数据处理目录](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05-processing)
+[下一节：输入磁场噪声、远参考与稳健估计](/posts/2026/10/mt-course-05b-impedance-estimation/#sec-05e-robust)
 
 
 ---
@@ -401,4 +401,4 @@ $$
 
 到这里，观测数据处理的数学链条已经基本接通：**时间信号 → 分窗与 FFT → 复数傅里叶系数 → 阻抗张量估计 → 噪声与不确定度评估。**
 
-[返回数据处理专题目录](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05-processing) · [返回系列总目录](/posts/2026/10/mt-course/)
+
