@@ -94,7 +94,7 @@ $$
 
 前面学习的偏导数、复数、矩阵、泰勒展开和最小二乘，最终都是为了在有限数据条件下，把地下结构的推断尽可能建立在物理规律与可检验证据之上。
 
-[返回全系列总目录](/posts/2026/10/mt-course/) · [回顾反演与 Occam 专题](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
+[回顾反演与 Occam 专题](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
 
 
 ---
@@ -206,7 +206,7 @@ $$
 2. 一根均匀样品长度加倍、截面积不变，电阻怎样变化？答：加倍。
 3. 两块矿物成分相同的岩石，为什么电阻率仍可能大不相同？答：含水量、孔隙连通性、温压和蚀变等因素都可能不同。
 
-[下一节：阿尔奇定律与流体连通性](/posts/2026/10/mt-course-08a-rock-physics/#sec-08b-archie) · [地质解释专题目录](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
+[下一节：阿尔奇定律与流体连通性](/posts/2026/10/mt-course-08a-rock-physics/#sec-08b-archie)
 
 
 ---
@@ -349,7 +349,7 @@ $$
 
 如果只测出 $\rho_b=4\ \Omega\cdot\mathrm m$，能不能唯一判断 $\phi=0.5$？不能，$\rho_w$、$m$ 和其他传导机制仍未知。
 
-[下一节：大陆与全球尺度的电性结构](/posts/2026/10/mt-course-08a-rock-physics/#sec-08c-global-arrays) · [地质解释专题目录](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
+[下一节：大陆与全球尺度的电性结构](/posts/2026/10/mt-course-08a-rock-physics/#sec-08c-global-arrays)
 
 
 ---
@@ -433,4 +433,4 @@ $$
 
 **③** 为什么全球电性模型常需要与地震层析成像比较？因为它们对不同的物性敏感，可以为结构与成因提供互补证据。
 
-[下一节：北美西北部俯冲带的三条导电带](/posts/2026/10/mt-course-08b-continental-cases/#sec-08d-cascadia) · [地质解释专题目录](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
+[下一节：北美西北部俯冲带的三条导电带](/posts/2026/10/mt-course-08b-continental-cases/#sec-08d-cascadia)

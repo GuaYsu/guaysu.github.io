@@ -152,7 +152,7 @@ $$
 
 实际做维度分析时，还要同时考虑相位张量、区域地质走向、tipper、频率依赖与不同测点一致性。
 
-[下一节：Groom–Bailey 畸变分解](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06e-distortion) · [专题目录](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis)
+[下一节：Groom–Bailey 畸变分解](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06e-distortion)
 
 
 ---
@@ -269,7 +269,7 @@ $$
 
 **自检：** 若 $\mathbf C=\begin{pmatrix}1&0.5\\0&1\end{pmatrix}$，区域场为 $(2,4)^T$，观测场是多少？答：$(4,4)^T$。因为 $E_x$ 混进了 $0.5E_y$。
 
-[下一节：相位张量为何能抵消实数电流性畸变？](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06f-phase-tensor) · [专题目录](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis)
+[下一节：相位张量为何能抵消实数电流性畸变？](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06f-phase-tensor)
 
 
 ---
@@ -512,4 +512,4 @@ $$
 
 **练习：** 若 $\mathbf X=2\mathbf I$、$\mathbf Y=3\mathbf I$，则 $\boldsymbol\Phi=(3/2)\mathbf I$，对应理想的各向同性相位张量形态。
 
-[下一节：走向估计与维度诊断](/posts/2026/10/mt-course-06c-strike-static/#sec-06g-strike) · [专题目录](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis)
+[下一节：走向估计与维度诊断](/posts/2026/10/mt-course-06c-strike-static/#sec-06g-strike)

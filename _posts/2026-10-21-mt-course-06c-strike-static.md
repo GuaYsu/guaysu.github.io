@@ -144,7 +144,7 @@ $$
 
 如果某测点低频段给出的走向和高频段不同，能否直接宣布地质走向随深度改变？答案：不能，首先还需排除噪声和浅部畸变，但这种现象可以成为进一步研究的线索。
 
-[下一节：静态位移与真实数据分析](/posts/2026/10/mt-course-06c-strike-static/#sec-06h-static-shift) · [专题目录](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis)
+[下一节：静态位移与真实数据分析](/posts/2026/10/mt-course-06c-strike-static/#sec-06h-static-shift)
 
 
 ---
@@ -280,4 +280,4 @@ MTpy 是 Python 生态中的大地电磁数据分析与可视化工具，可以�
 
 **③** 怀疑某测点有静态位移，是否应该直接手动平移曲线？不宜直接操作，应先用测点、物性与模型约束判断。
 
-[返回数据分析专题](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis) · [继续学习：地球物理反演](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
+[继续学习：地球物理反演](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)

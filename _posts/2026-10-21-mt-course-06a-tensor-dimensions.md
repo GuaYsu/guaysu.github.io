@@ -153,7 +153,7 @@ $$
 
 **自检：** 如果 $\mathbf Z=\begin{pmatrix}1&2\\3&4\end{pmatrix}$、$\mathbf H=(0,5)^T$，输出是多少？答：$(10,20)^T$。记住只有第二列对结果起作用。
 
-[下一篇：一维、二维、三维与 TE/TM](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06b-dimensionality) · [专题目录](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis)
+[下一篇：一维、二维、三维与 TE/TM](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06b-dimensionality)
 
 
 ---
@@ -236,7 +236,7 @@ $$
 
 下一篇我们解决一个令人头疼的问题：为什么变换坐标时，张量要在左右两边各乘一次旋转矩阵？
 
-[继续：旋转矩阵从哪里来？](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06c-rotation) · [专题目录](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis)
+[继续：旋转矩阵从哪里来？](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06c-rotation)
 
 
 ---
@@ -409,4 +409,4 @@ $$
 2. 为什么 $\mathbf Z'$ 不是简单的 $\mathbf R\mathbf Z$？因为磁场输入也要变换坐标。
 3. 迹与反迹相同是否足以证明两个阻抗张量物理相同？不够，它们只包含部分信息。
 
-[下一节：WAL 不变量与维度判断](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06d-invariants) · [专题目录](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis)
+[下一节：WAL 不变量与维度判断](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06d-invariants)

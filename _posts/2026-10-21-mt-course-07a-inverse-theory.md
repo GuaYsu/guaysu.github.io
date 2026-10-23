@@ -85,7 +85,7 @@ $$
 
 下一专题再把稳定的电性异常放回真实地质环境中，研究其可能的物性成因。
 
-[返回全系列目录](/posts/2026/10/mt-course/) · [继续：电阻率结构与地质解释](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
+[继续：电阻率结构与地质解释](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
 
 
 ---
@@ -193,7 +193,7 @@ $$d=m_1+m_2=10.$$
 
 正因为数据无法唯一确定全部地下参数，反演才需要加入参考模型、平滑程度或独立地质信息等约束。算法的复杂，是信息不足在数学上的具体表现。
 
-[下一节：用一个方程理解零空间](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07b-nullspace) · [反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
+[下一节：用一个方程理解零空间](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07b-nullspace)
 
 
 ---
@@ -355,7 +355,7 @@ $\mathbf J$ 是后面要认真推导的雅可比矩阵。若某个 $\Delta\mathb
 
 **③** 如果某深部低阻层能在多个不同厚度和电阻率组合下保持类似数据拟合，应如何表述？可以说数据更可靠地约束了某种综合电性效应，对厚度和电阻率的单独确定仍需更多检验。
 
-[继续：带误差的数据应该怎样拟合？](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07c-misfit) · [反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
+[继续：带误差的数据应该怎样拟合？](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07c-misfit)
 
 
 ---
@@ -481,4 +481,4 @@ $$
 
 如果只看最后一个数字而不查看三个残差，便看不出第三条数据明显偏大。这也是为什么“达到了目标 RMS”仍不代表反演分析已经完成。
 
-[下一节：雅可比矩阵怎样计算灵敏度？](/posts/2026/10/mt-course-07b-optimization/#sec-07d-jacobian) · [反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
+[下一节：雅可比矩阵怎样计算灵敏度？](/posts/2026/10/mt-course-07b-optimization/#sec-07d-jacobian)

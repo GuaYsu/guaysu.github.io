@@ -217,7 +217,7 @@ $$
 
 **③** 平滑反演中出现一个 10 km 宽的低阻区，是否说明真实导电地层一定宽 10 km？不能，范围受数据分辨率与平滑约束共同影响。
 
-[下一节：反演结果怎样验证？](/posts/2026/10/mt-course-07c-occam-resolution/#sec-07h-validation) · [反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion)
+[下一节：反演结果怎样验证？](/posts/2026/10/mt-course-07c-occam-resolution/#sec-07h-validation)
 
 
 ---
@@ -322,4 +322,4 @@ $$\mathrm{nRMS}=1.05.$$
 
 当这些条件还没有得到验证时，合理的表述应保留不确定性，而不是让反演图替我们作出超出数据支持范围的结论。
 
-[返回反演专题目录](/posts/2026/10/mt-course-07a-inverse-theory/#sec-07-inversion) · [继续：电性结构的地质解释](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
+[继续：电性结构的地质解释](/posts/2026/10/mt-course-08a-rock-physics/#sec-08-interpretation)
