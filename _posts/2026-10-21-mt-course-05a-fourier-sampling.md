@@ -28,7 +28,7 @@ tags: [大地电磁, 频谱分析, 数学基础]
 
 ![不同频率信号叠加](/images/posts/mt-course/17-frequency-mixture.svg)
 
-这个专题专门安排为五篇数学入门讲义，每一篇从一个小例子开始，再推导完整公式。
+这一章从两条正弦波的叠加讲到傅里叶分解、离散采样、FFT 和切窗。接下来再学习阻抗回归与稳健估计。
 
 ### 建议按顺序阅读
 
@@ -41,10 +41,10 @@ tags: [大地电磁, 频谱分析, 数学基础]
 3. **[为什么要切窗口？](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05c-windowing)**  
    去均值、去趋势、窗函数、频谱泄漏、窗口长度与频率分辨率、降采样和多频带处理。
 
-4. **[从一条直线开始学习最小二乘阻抗估计](/posts/2026/10/mt-course-05d-least-squares/)**  
+4. **[从一条直线开始学习最小二乘阻抗估计](/posts/2026/10/mt-course-05b-impedance-estimation/#sec-05d-least-squares)**  
    用三组数字求最佳斜率，推导残差平方和最小化，再扩展到复数线性回归及阻抗张量。
 
-5. **[为什么最小二乘会算偏：远参考与稳健回归](/posts/2026/10/mt-course-05e-robust/)**  
+5. **[为什么最小二乘会算偏：远参考与稳健回归](/posts/2026/10/mt-course-05b-impedance-estimation/#sec-05e-robust)**  
    认识电、磁通道噪声不对称的问题，用简单公式推导输入噪声偏差，再认识远参考、Huber 损失和 IRLS。
 
 ### 从头到尾其实是一条完整的运算链
@@ -58,7 +58,7 @@ $$
 
 最后两步包含统计估计，尤其需要关注误差条、受干扰的频带和仪器校准。软件能快速算出结果，但无法替代对数据有效性的判断。
 
-学完这组再进入[阻抗张量、维度与畸变分析](/posts/2026/10/mt-course-06-analysis/)，便能更清楚地区分“计算出来的阻抗”和“地下可能是哪种结构”。
+学完这组再进入[阻抗张量、维度与畸变分析](/posts/2026/10/mt-course-06a-tensor-dimensions/#sec-06-analysis)，便能更清楚地区分“计算出来的阻抗”和“地下可能是哪种结构”。
 
 [返回系列总目录](/posts/2026/10/mt-course/)。
 
@@ -481,4 +481,4 @@ $$
 
 **③** 降采样只需要隔几个点扔掉其他数据吗？不能。通常必须先进行抗混叠滤波。
 
-[下一节：最小二乘如何从许多窗口估计阻抗](/posts/2026/10/mt-course-05d-least-squares/) · [数据处理目录](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05-processing)
+[下一节：最小二乘如何从许多窗口估计阻抗](/posts/2026/10/mt-course-05b-impedance-estimation/#sec-05d-least-squares) · [数据处理目录](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05-processing)

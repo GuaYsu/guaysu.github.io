@@ -8,8 +8,6 @@ tags: [大地电磁, 有限差分, 数学基础]
 ---
 {% include mt-course-math.html %}
 
-本篇汇合专题导读与完整基础讲义，每一处公式推导均保留。
-
 ## 本篇目录
 - [数值正演专题｜从有限差分入门到二维、三维电磁计算](#sec-03-finite-difference)
 - [数值正演 01｜为什么把连续的地下切成网格？](#sec-03a-grid)
@@ -45,13 +43,13 @@ tags: [大地电磁, 有限差分, 数学基础]
 4. **[矩阵到底是什么？](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03d-matrix)**  
    从初中联立方程开始，一步步理解稀疏三对角矩阵，以及为什么数值计算需要求解方程组。
 
-5. **[边界条件如何影响答案？](/posts/2026/10/mt-course-03e-boundaries/)**  
+5. **[边界条件如何影响答案？](/posts/2026/10/mt-course-03b-numerical-forward/#sec-03e-boundaries)**  
    解释地表归一化、底部截断、趋肤深度、地表磁场和误差验证。
 
-6. **[从一条线到一个体：二维与三维有限差分](/posts/2026/10/mt-course-03f-multidimensional/)**  
+6. **[从一条线到一个体：二维与三维有限差分](/posts/2026/10/mt-course-03b-numerical-forward/#sec-03f-multidimensional)**  
    二维五点模板、TE/TM 极化、三维交错网格及其物理意义。
 
-7. **[薄层为什么难分辨？](/posts/2026/10/mt-course-03g-sensitivity/)**  
+7. **[薄层为什么难分辨？](/posts/2026/10/mt-course-03b-numerical-forward/#sec-03g-sensitivity)**  
    薄层纵向电导、埋深、相位响应、模型等效性及简谐电磁场的时域表达。
 
 ### 先看一眼最终要解决的问题
@@ -360,7 +358,7 @@ $$
 <a id="sec-03c-nonuniform"></a>
 ## 第4单元｜数值正演 03｜网格不等间距怎么办：从左右斜率到电磁方程
 
-数值网格不一定要等间距。浅部的变化可能比深部更加剧烈，我们希望地表附近网格细一些，在深部逐渐加粗。这样既节省计算量，又能更有效地描述关键结构。
+数值网格可以采用不等间距：在场变化较快的浅部和电性边界附近加密，深部或远离目标的区域逐渐放粗，从而节省计算量。网格当然可以一直加密，但计算机的内存和时间不会凭空变多。
 
 可是上一节的公式
 
@@ -699,4 +697,4 @@ $$
 
 矩阵已经有了。接下来一个关键问题是：**为什么两端可以设成 1 和 0？如果这些边界设错，解会发生什么变化？**
 
-[继续阅读：边界条件、地表磁场与数值精度](/posts/2026/10/mt-course-03e-boundaries/) · [返回数值正演目录](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference)
+[继续阅读：边界条件、地表磁场与数值精度](/posts/2026/10/mt-course-03b-numerical-forward/#sec-03e-boundaries) · [返回数值正演目录](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03-finite-difference)

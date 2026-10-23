@@ -8,8 +8,6 @@ tags: [大地电磁, 数学基础, 自学教程]
 ---
 {% include mt-course-math.html %}
 
-以下内容由原有完整章节合并，原文没有压缩。
-
 ## 本篇目录
 - [数据处理 04｜从画一条直线开始学阻抗的最小二乘估计](#sec-05d-least-squares)
 - [数据处理 05｜最小二乘为什么会算偏：远参考与稳健回归](#sec-05e-robust)
@@ -169,7 +167,7 @@ $$
 \mathbf e_x=\mathbf H\mathbf z_x+\boldsymbol\varepsilon.
 $$
 
-如果读者还不熟悉矩阵乘法，可以回看[矩阵与方程组入门](/posts/2026/10/mt-course-03d-matrix/)；它实际上就是把每个窗口的一条线性方程叠放在一起。
+如果读者还不熟悉矩阵乘法，可以回看[矩阵与方程组入门](/posts/2026/10/mt-course-03a-numerical-grid/#sec-03d-matrix)；它实际上就是把每个窗口的一条线性方程叠放在一起。
 
 ### 六、复数最小二乘多了什么？
 
@@ -220,7 +218,7 @@ $$
 
 **③** 为什么一个窗口不能稳定确定一般阻抗张量的一整行？因为一条复数观测方程对应两个未知复数系数。
 
-[下一节：输入磁场噪声、远参考与稳健估计](/posts/2026/10/mt-course-05b-impedance-estimation/#sec-05e-robust) · [数据处理目录](/posts/2026/10/mt-course-05-processing/)
+[下一节：输入磁场噪声、远参考与稳健估计](/posts/2026/10/mt-course-05b-impedance-estimation/#sec-05e-robust) · [数据处理目录](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05-processing)
 
 
 ---
@@ -403,4 +401,4 @@ $$
 
 到这里，观测数据处理的数学链条已经基本接通：**时间信号 → 分窗与 FFT → 复数傅里叶系数 → 阻抗张量估计 → 噪声与不确定度评估。**
 
-[返回数据处理专题目录](/posts/2026/10/mt-course-05-processing/) · [返回系列总目录](/posts/2026/10/mt-course/)
+[返回数据处理专题目录](/posts/2026/10/mt-course-05a-fourier-sampling/#sec-05-processing) · [返回系列总目录](/posts/2026/10/mt-course/)
