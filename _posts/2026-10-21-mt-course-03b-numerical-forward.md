@@ -66,7 +66,7 @@ $$
 求出所有节点的电场 $u_0,u_1,u_2,\dots$ 之后，别忘了我们需要的是地表阻抗 $Z_{xy}(0)=E_x(0)/H_y(0)$。根据法拉第方程 $\frac{dE_x}{dz}=-i\omega\mu_0 H_y$，地表磁场取决于**地表处电场随深度的导数**：
 
 $$
-\boxed{H_y(0)=-\frac{1}{i\omega\mu_0}\left.\frac{dE_x}{dz}\right|_{z=0}}.
+\boxed{H_y(0)=-\frac{1}{i\omega\mu_0}\left.\frac{dE_x}{dz}\right\vert_{z=0}}.
 $$
 
 这里藏着一个经典陷阱：哪怕你把地下几百个节点的电场算得非常准，只要最后在地表求导这一步用了粗糙公式，算出来的阻抗照样会有明显偏差。
@@ -280,7 +280,7 @@ $$
 
 ### 六、视电阻率与相位为什么必须联合拟合？
 
-复阻抗 $Z=|Z|e^{i\phi}$ 拆成了模长（对应视电阻率 $\rho_a=|Z|^2/(\omega\mu_0)$）和辐角（对应相位 $\phi$）。
+复阻抗 $Z=\lvert Z\rvert e^{i\phi}$ 拆成了模长（对应视电阻率 $\rho_a=\lvert Z\rvert^2/(\omega\mu_0)$）和辐角（对应相位 $\phi$）。
 - 如果浅部存在局部畸变把整个电场放大或缩小了常数倍（第 11 篇要讲的静态位移），视电阻率曲线会整体上下平移，而**相位曲线却不受影响**；
 - 相位对电导率随深度的**相对变化梯度**尤为敏感（向下进入更导电地层时，在 $e^{+i\omega t}$ 约定下相位通常会大于 $45^\circ$；进入更阻地层时则会小于 $45^\circ$）。
 
@@ -288,15 +288,15 @@ $$
 
 ### 七、收尾：把复指数解还原回真实随时间波动的电场
 
-最后我们把第 02 篇和第 03 篇推导出的均匀半空间复振幅解 $E_x(z)=Ae^{-kz}$（其中 $k=\alpha+i\beta$，$\alpha=\beta=\sqrt{\frac{\omega\mu_0\sigma}{2}}$）乘回时间因子 $e^{+i\omega t}$，取实部还原出随时间和深度变化的真实物理电场（设 $A=|A|e^{i\phi_A}$）：
+最后我们把第 02 篇和第 03 篇推导出的均匀半空间复振幅解 $E_x(z)=Ae^{-kz}$（其中 $k=\alpha+i\beta$，$\alpha=\beta=\sqrt{\frac{\omega\mu_0\sigma}{2}}$）乘回时间因子 $e^{+i\omega t}$，取实部还原出随时间和深度变化的真实物理电场（设 $A=\lvert A\rvert e^{i\phi_A}$）：
 
 $$
-E_x(z,t)=\operatorname{Re}\left[|A|e^{i\phi_A}e^{-(\alpha+i\beta)z}e^{i\omega t}\right]
-=\boxed{|A|e^{-\alpha z}\cos(\omega t-\beta z+\phi_A)}.
+E_x(z,t)=\operatorname{Re}\left[\lvert A\rvert e^{i\phi_A}e^{-(\alpha+i\beta)z}e^{i\omega t}\right]
+=\boxed{\lvert A\rvert e^{-\alpha z}\cos(\omega t-\beta z+\phi_A)}.
 $$
 
 看清式子里的两项分工：
-- **振幅因子 $|A|e^{-\alpha z}$**：随着深度 $z$ 增加呈指数衰减；
+- **振幅因子 $\lvert A\rvert e^{-\alpha z}$**：随着深度 $z$ 增加呈指数衰减；
 - **相位因子 $\omega t-\beta z+\phi_A$**：随着深度 $z$ 增加不断滞后（相速度 $v_{\rm ph}=\omega/\beta$，但在导电岩石中电磁场以扩散衰减为主，不能把相速度直接等同于真空光速那样的无损能量传播速度）。
 
 ### 自我小测

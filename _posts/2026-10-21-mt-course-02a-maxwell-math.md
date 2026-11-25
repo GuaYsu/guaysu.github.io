@@ -139,7 +139,7 @@ $$
   \boxed{\frac{\partial E_x}{\partial t}=-(10-2z)\omega\sin(\omega t)}.
   $$
 
-这个弯弯的符号 $\partial$ 读作“偏”（partial），提醒我们：**函数依赖多个变量，这里只挑分母上的那一个变量求导，其余变量一律按常数对待。** 以后看到分式模样的偏导数，第一反应先盯分母——分母是 $z$ 还是 $t$，直接决定了物理问题在考察空间分布还是时间演化。
+这个弯弯的符号 $\partial$ 读作“偏”（partial），提醒我们：**函数依赖多个变量，这里只挑分母上的那一个变量求导，其余变量一律按常数对待。** 以后看到分式模样的偏导数，第一反应先盯分母——分母是 $z$还是 $t$，直接决定了物理问题在考察空间分布还是时间演化。
 
 ### 六、一个最容易看岔的下标细节
 
@@ -548,11 +548,11 @@ $$
 - 实指数 $e^{-\alpha z}$：控制振幅随深度呈指数衰减；
 - 虚指数 $e^{-i\beta z}$：控制波形相位随深度不断滞后平移。
 
-把时间因子 $e^{+i\omega t}$ 乘回来，再令复常数 $A=|A|e^{i\phi_A}$ 并取实部，就还原出了地下任意深度 $z$、任意时刻 $t$ 的真实电场波形：
+把时间因子 $e^{+i\omega t}$ 乘回来，再令复常数 $A=\lvert A\rvert e^{i\phi_A}$ 并取实部，就还原出了地下任意深度 $z$、任意时刻 $t$ 的真实电场波形：
 
 $$
-E_x(z,t)=\operatorname{Re}\left[|A|e^{i\phi_A}e^{-\alpha z}e^{-i\beta z}e^{i\omega t}\right]
-=\boxed{|A|e^{-\alpha z}\cos(\omega t-\beta z+\phi_A)}.
+E_x(z,t)=\operatorname{Re}\left[\lvert A\rvert e^{i\phi_A}e^{-\alpha z}e^{-i\beta z}e^{i\omega t}\right]
+=\boxed{\lvert A\rvert e^{-\alpha z}\cos(\omega t-\beta z+\phi_A)}.
 $$
 
 这条式子把第 01 篇学过的“时间振荡”和“空间传播衰减”完美地统一到了同一个表达式里。

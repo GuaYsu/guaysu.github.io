@@ -107,10 +107,10 @@ $$
 
 ### 六、复数最小二乘矩阵公式
 
-因为电场和磁场都是复数，残差平方应该用**模长平方** $|r|^2=r^*r$（上标 $*$ 表示复共轭，虚部变号）来衡量：
+因为电场和磁场都是复数，残差平方应该用**模长平方** $\lvert r\rvert^2=r^*r$（上标 $*$ 表示复共轭，虚部变号）来衡量：
 
 $$
-S(\mathbf z_x)=\sum_{j=1}^N |E_{xj}-Z_{xx}H_{xj}-Z_{xy}H_{yj}|^2=(\mathbf e_x-\mathbf H\mathbf z_x)^*(\mathbf e_x-\mathbf H\mathbf z_x),
+S(\mathbf z_x)=\sum_{j=1}^N \lvert E_{xj}-Z_{xx}H_{xj}-Z_{xy}H_{yj}\rvert^2=(\mathbf e_x-\mathbf H\mathbf z_x)^*(\mathbf e_x-\mathbf H\mathbf z_x),
 $$
 
 这里向量右上角的 $*$ 表示**共轭转置**（先取复共轭再行列转置）。对复向量 $\mathbf z_x$ 求导令零，就得到了复数最小二乘估计的标准公式：
@@ -132,7 +132,7 @@ $$
 **1.** 已知两组实数观测 $(x_1,y_1)=(1,2)$、$(x_2,y_2)=(2,5)$，求过原点直线 $y=ax$ 的最小二乘斜率。  
 **答：** $\widehat a=\dfrac{1\times 2+2\times 5}{1^2+2^2}=\dfrac{12}{5}=2.4$。
 
-**2.** 若复数残差 $r=1+2i$，它的模长平方 $|r|^2=r^*r$ 是多少？  
+**2.** 若复数残差 $r=1+2i$，它的模长平方 $\lvert r\rvert^2=r^*r$ 是多少？  
 **答：** $(1-2i)(1+2i)=1^2+2^2=5$。
 
 **3.** 为什么只靠 $1$ 个时间窗口的数据无法唯一解出一般三维地下的 $Z_{xx}$ 和 $Z_{xy}$？  
@@ -169,22 +169,22 @@ $$
 $$
 
 把含噪表达式代进去展开。假设局部噪声 $\eta,\varepsilon$ 均值为零，且与天然信号 $B_s$ 互不相关、彼此也不相关，那么所有交叉乘积项在大量窗口平均后趋近于零：
-- **分子**：$\langle(B_s+\eta)^*(ZB_s+\varepsilon)\rangle = Z\langle |B_s|^2\rangle$；
-- **分母**：$\langle(B_s+\eta)^*(B_s+\eta)\rangle = \langle |B_s|^2\rangle + \langle |\eta|^2\rangle$。
+- **分子**：$\langle(B_s+\eta)^*(ZB_s+\varepsilon)\rangle = Z\langle \lvert B_s\rvert^2\rangle$；
+- **分母**：$\langle(B_s+\eta)^*(B_s+\eta)\rangle = \langle \lvert B_s\rvert^2\rangle + \langle \lvert\eta\rvert^2\rangle$。
 
-记真实天然信号功率为 $S=\langle |B_s|^2\rangle$，磁场噪声功率为 $N=\langle |\eta|^2\rangle$，于是得到：
+记真实天然信号功率为 $S=\langle \lvert B_s\rvert^2\rangle$，磁场噪声功率为 $N=\langle \lvert\eta\rvert^2\rangle$，于是得到：
 
 $$
 \boxed{\widehat Z\approx Z\frac{S}{S+N}}.
 $$
 
-看清这个分式！因为噪声功率 $N\ge 0$，比值 $\dfrac{S}{S+N}$ 永远小于或等于 $1$。**只要本地磁场通道有噪声，分母就会变大而分子不变，导致最小二乘算出来的阻抗模长系统性偏小**，进而把视电阻率 $\rho_a\propto |Z|^2$ 往下拉低（这就是经典的向下偏差 downward bias）。
+看清这个分式！因为噪声功率 $N\ge 0$，比值 $\dfrac{S}{S+N}$ 永远小于或等于 $1$。**只要本地磁场通道有噪声，分母就会变大而分子不变，导致最小二乘算出来的阻抗模长系统性偏小**，进而把视电阻率 $\rho_a\propto \lvert Z\rvert^2$ 往下拉低（这就是经典的向下偏差 downward bias）。
 
 ### 二、远参考（Remote Reference）：借远方好友的干净磁场照亮本地
 
 ![稳健回归与远参考的不同任务](/images/posts/mt-course/20-regression-remote.svg)
 
-怎么把分母里那个讨厌的 $\langle |\eta|^2\rangle$ 消掉？Gamble 等人在 1979 年提出了一个绝妙的思路：**在几十甚至上百千米外的安静地区，同步架设一台远参考站，记录远站磁场 $B_r=B_{s,r}+\eta_r$。**
+怎么把分母里那个讨厌的 $\langle \lvert\eta\rvert^2\rangle$ 消掉？Gamble 等人在 1979 年提出了一个绝妙的思想：**在几十甚至上百千米外的安静地区，同步架设一台远参考站，记录远站磁场 $B_r=B_{s,r}+\eta_r$。**
 
 天然电磁场源来自高空电离层和磁层，尺度动辄数千千米，因此远站天然磁场 $B_{s,r}$ 与本地天然磁场 $B_s$ 高度相关；但本地测站旁边抽水机或公路车辆产生的局部噪声 $\eta$，绝不会传到一百千米外的远参考站去，所以本地噪声与远站信号完全不相关！
 
@@ -211,20 +211,20 @@ $$
 $$
 \ell_\kappa(r)=
 \begin{cases}
-\dfrac{1}{2}r^2, & |r|\le \kappa,\\[6pt]
-\kappa|r|-\dfrac{1}{2}\kappa^2, & |r|>\kappa,
+\dfrac{1}{2}r^2, & \lvert r\rvert\le \kappa,\\[6pt]
+\kappa\lvert r\rvert-\dfrac{1}{2}\kappa^2, & \lvert r\rvert>\kappa,
 \end{cases}
 $$
 
 其中 $\kappa>0$ 是设定的门限阈值（例如 $\kappa=1.5$）。
-- 当残差很小（$|r|\le\kappa$）时，它和普通最小二乘一模一样，保持高斯噪声下的最优统计效率；
-- 一旦残差超过阈值（$|r|>\kappa$），惩罚从二次方增长切换为**线性增长**，不再让野值的惩罚呈平方级爆炸。
+- 当残差很小（$\lvert r\rvert\le\kappa$）时，它和普通最小二乘一模一样，保持高斯噪声下的最优统计效率；
+- 一旦残差超过阈值（$\lvert r\rvert>\kappa$），惩罚从二次方增长切换为**线性增长**，不再让野值的惩罚呈平方级爆炸。
 
 ### 五、迭代重加权最小二乘（IRLS）是怎么自动降权的？
 
-优化 Huber 损失在数值上等价于做**迭代重加权最小二乘（IRLS）**：给残差越大的可疑窗口分配越小的权重 $w(r)$（正常窗口权重为 $1$，异常窗口权重按 $\kappa/|r|$ 缩小）。具体计算分五步循环：
+优化 Huber 损失在数值上等价于做**迭代重加权最小二乘（IRLS）**：给残差越大的可疑窗口分配越小的权重 $w(r)$（正常窗口权重为 $1$，异常窗口权重按 $\kappa/\lvert r\rvert$ 缩小）。具体计算分五步循环：
 1. 先用普通最小二乘（所有窗口权重相等）算出一个初始阻抗估计；
-2. 代回每个窗口，算出各自的残差大小 $|r_j|$；
+2. 代回每个窗口，算出各自的残差大小 $\lvert r_j\rvert$；
 3. 根据残差大小重新计算每个窗口的权重 $w_j$（残差越大，权重压得越低）；
 4. 用加权最小二乘重新求解阻抗；
 5. 重复第 2～4 步，直到阻抗估计收敛稳定。
@@ -238,7 +238,7 @@ $$
 ### 自我小测
 
 **1.** 为什么本地磁场通道存在独立噪声时，普通最小二乘算出的阻抗模长会系统性偏小？  
-**答：** 因为磁场噪声功率会额外叠加进回归公式的分母 $\langle |B_s|^2\rangle+\langle |\eta|^2\rangle$ 中，而分子在独立噪声假设下不变，导致估计结果乘上了小于 $1$ 的衰减因子 $S/(S+N)$。
+**答：** 因为磁场噪声功率会额外叠加进回归公式的分母 $\langle \lvert B_s\rvert^2\rangle+\langle \lvert\eta\rvert^2\rangle$ 中，而分子在独立噪声假设下不变，导致估计结果乘上了小于 $1$ 的衰减因子 $S/(S+N)$。
 
 **2.** 远参考方法主要利用了天然场源和局部噪声的什么统计差异？  
 **答：** 利用了天然电磁场在数十至上百千米尺度上具有高度空间相关性，而测站周边的局部人文或仪器噪声在两站之间互不相关的特性。

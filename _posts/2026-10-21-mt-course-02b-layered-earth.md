@@ -40,7 +40,7 @@ $$
 \boxed{Z_{xy}=\frac{E_x}{H_y}}.
 $$
 
-因为分子和分母都是复数，阻抗 $Z_{xy}$ 也是一个复数，既有模长 $|Z_{xy}|$，也有相位 $\phi=\arg Z_{xy}$。
+因为分子和分母都是复数，阻抗 $Z_{xy}$ 也是一个复数，既有模长 $\lvert Z_{xy}\rvert$，也有相位 $\phi=\arg Z_{xy}$。
 
 ### 二、由电场反算磁场
 
@@ -112,26 +112,26 @@ $$
 Z_{xy}=\sqrt{\omega\mu_0\rho}\cdot\sqrt{i}=\sqrt{\omega\mu_0\rho}\,e^{i\pi/4}.
 $$
 
-对照复数标准写法 $Z_{xy}=|Z_{xy}|e^{i\phi}$，模长和相位一目了然：
+对照复数标准写法 $Z_{xy}=\lvert Z_{xy}\rvert e^{i\phi}$，模长和相位一目了然：
 
 $$
-\boxed{|Z_{xy}|=\sqrt{\omega\mu_0\rho}},\qquad \boxed{\phi=\frac{\pi}{4}=45^\circ}.
+\boxed{\lvert Z_{xy}\rvert=\sqrt{\omega\mu_0\rho}},\qquad \boxed{\phi=\frac{\pi}{4}=45^\circ}.
 $$
 
 **适用条件提醒：** $45^\circ$ 相位成立的前提是**均匀、各向同性、低频导电半空间、$e^{+i\omega t}$ 时间约定以及 $(E_x,H_y)$ 极化**。一旦地下出现多层高低阻变化或二维、三维构造，相位就会随频率偏离 $45^\circ$——恰恰是这些偏离，携带了地下结构随深度变化的信息。
 
 ### 五、从阻抗反算视电阻率（附量纲检查）
 
-把模长公式 $|Z_{xy}|=\sqrt{\omega\mu_0\rho}$ 两边同时平方，解出电阻率 $\rho$：
+把模长公式 $\lvert Z_{xy}\rvert=\sqrt{\omega\mu_0\rho}$ 两边同时平方，解出电阻率 $\rho$：
 
 $$
-\rho=\frac{|Z_{xy}|^2}{\omega\mu_0}.
+\rho=\frac{\lvert Z_{xy}\rvert^2}{\omega\mu_0}.
 $$
 
 如果地下确实是均匀半空间，右边算出来的就是地下岩石的真实电阻率。但真实地球往往由多层不同岩性的地层叠合而成，某一频率测到的阻抗混合了多个深度范围的综合影响；此时我们依然按同一个公式换算，但把结果命名为**视电阻率** $\rho_a$（下标 $a$ 取自 apparent，意为“表观的”）：
 
 $$
-\boxed{\rho_a=\frac{|Z|^2}{\omega\mu_0}}.
+\boxed{\rho_a=\frac{\lvert Z\rvert^2}{\omega\mu_0}}.
 $$
 
 **务必区分视电阻率 $\rho_a$ 与真实电阻率 $\rho$：** 视电阻率只是把观测阻抗换算成电阻率量纲后的一条响应曲线，并不是一张已经解好的地下分层报告。
@@ -143,7 +143,7 @@ $$
 - 角频率 $\omega$ 的单位是 $\mathrm{s^{-1}}$，真空磁导率 $\mu_0$ 的单位可写作 $\Omega\cdot\mathrm{s/m}$，两者相乘的单位为 $[\omega\mu_0]=\Omega/\mathrm m$；
 - 代入视电阻率公式：
   $$
-  \left[\frac{|Z|^2}{\omega\mu_0}\right]=\frac{\Omega^2}{\Omega/\mathrm m}=\Omega\cdot\mathrm m,
+  \left[\frac{\lvert Z\rvert^2}{\omega\mu_0}\right]=\frac{\Omega^2}{\Omega/\mathrm m}=\Omega\cdot\mathrm m,
   $$
   恰好就是电阻率的标准单位。
 
@@ -187,8 +187,8 @@ $$
 
 ### 自我小测
 
-**1.** 若某频率的阻抗模长 $|Z|$ 增大为原来的 $2$ 倍，其他条件不变，视电阻率 $\rho_a$ 会变成原来的多少倍？  
-**答：** $4$ 倍，因为 $\rho_a=|Z|^2/(\omega\mu_0)$ 与 $|Z|^2$ 成正比。
+**1.** 若某频率的阻抗模长 $\lvert Z\rvert$ 增大为原来的 $2$ 倍，其他条件不变，视电阻率 $\rho_a$ 会变成原来的多少倍？  
+**答：** $4$ 倍，因为 $\rho_a=\lvert Z\rvert^2/(\omega\mu_0)$ 与 $\lvert Z\rvert^2$ 成正比。
 
 **2.** 在均匀半空间中，若观测频率降为原来的四分之一，趋肤深度 $\delta$ 变为原来的多少倍？  
 **答：** $2$ 倍，因为 $\delta\propto 1/\sqrt{f}$。
@@ -333,7 +333,7 @@ $$
 Z_N \longrightarrow Z_{N-1} \longrightarrow \cdots \longrightarrow Z_2 \longrightarrow Z_1.
 $$
 
-在**正演计算**中，我们是预先给定地下每一层的厚度和电阻率，从最底层半空间出发自下而上递推，最终算出一系列频率下的地表视电阻率 $\rho_a(f)=|Z_1|^2/(\omega\mu_0)$ 和相位 $\phi(f)=\arg Z_1$，再拿去和野外实测曲线对比。
+在**正演计算**中，我们是预先给定地下每一层的厚度和电阻率，从最底层半空间出发自下而上递推，最终算出一系列频率下的地表视电阻率 $\rho_a(f)=\lvert Z_1\rvert^2/(\omega\mu_0)$ 和相位 $\phi(f)=\arg Z_1$，再拿去和野外实测曲线对比。
 
 ### 八、用两个极端情况检验公式是否靠谱
 
