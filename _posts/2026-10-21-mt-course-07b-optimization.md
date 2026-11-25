@@ -209,7 +209,7 @@ $$
 ### 三、亲手算两轮非线性迭代
 
 用一元非线性函数 $F(m)=m^2$ 体验一遍 Gauss–Newton 迭代：设实测数据 $d=9$，从初始猜测 $m_0=2$ 出发：
-- **第 1 轮迭代**：预测 $F(2)=4$，残差 $r_0=4-9=-5$，雅可比（导数）$J_0=2m|_{m=2}=4$。代入正规方程 $J_0^2\Delta m=-J_0r_0$：
+- **第 1 轮迭代**：预测 $F(2)=4$，残差 $r_0=4-9=-5$，雅可比（导数）$J_0=2m\vert_{m=2}=4$。代入正规方程 $J_0^2\Delta m=-J_0r_0$：
   $$
   16\Delta m=-4\times(-5)=20 \implies \Delta m=1.25 \implies m_1=2+1.25=3.25.
   $$
@@ -222,10 +222,10 @@ $$
 
 ### 四、加入数据误差权重与模型正则化
 
-把实际勘探所需的“数据误差加权矩阵 $\mathbf W_d$”（满足 $\mathbf W_d^T\mathbf W_d=\mathbf C_d^{-1}$）和“模型平滑正则化项 $\frac{\lambda}{2}\|\mathbf L(\mathbf m-\mathbf m_{\rm ref})\|^2$”一起写进总目标函数：
+把实际勘探所需的“数据误差加权矩阵 $\mathbf W_d$”（满足 $\mathbf W_d^T\mathbf W_d=\mathbf C_d^{-1}$）和“模型平滑正则化项 $\frac{\lambda}{2}\lVert\mathbf L(\mathbf m-\mathbf m_{\rm ref})\rVert^2$”一起写进总目标函数：
 
 $$
-\Phi(\mathbf m)=\frac{1}{2}\|\mathbf W_d(F(\mathbf m)-\mathbf d)\|^2+\frac{\lambda}{2}\|\mathbf L(\mathbf m-\mathbf m_{\rm ref})\|^2,
+\Phi(\mathbf m)=\frac{1}{2}\lVert\mathbf W_d(F(\mathbf m)-\mathbf d)\rVert^2+\frac{\lambda}{2}\lVert\mathbf L(\mathbf m-\mathbf m_{\rm ref})\rVert^2,
 $$
 
 其中 $\lambda>0$ 是正则化权重，$\mathbf L$ 是粗糙度差分算子，$\mathbf m_{\rm ref}$ 是先验参考模型。重复完全相同的线性化与求导步骤，就得到了工业界三维反演程序（如 ModEM）实际求解的**正则化 Gauss–Newton 核心方程**：

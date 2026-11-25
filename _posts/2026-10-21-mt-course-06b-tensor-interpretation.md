@@ -90,7 +90,7 @@ $$
 在 WAL 体系出现之前，地球物理学家最常用的是计算极其简便的 **Swift skew**：
 
 $$
-\boxed{\mathrm{skew}_S=\frac{|Z_{xx}+Z_{yy}|}{|Z_{xy}-Z_{yx}|}}.
+\boxed{\mathrm{skew}_S=\frac{\lvert Z_{xx}+Z_{yy}\rvert}{\lvert Z_{xy}-Z_{yx}\rvert}}.
 $$
 
 例如某频率测得 $Z_{xx}=0.1,\,Z_{yy}=0.1,\,Z_{xy}=4,\,Z_{yx}=-4$，则 $\mathrm{skew}_S=0.2/8=0.025$。无论在理想 1D 还是理想 2D 模型中，无论坐标系怎么旋转，主对角元之和 $Z_{xx}+Z_{yy}$ 恒为零，因此理论 Swift skew 恒等于 $0$；历史上常把 $\mathrm{skew}_S<0.2$ 作为二维近似的粗略筛查门槛。不过 Swift skew 容易受浅部三维畸变干扰（即使深部是标准二维，浅部小异常体也能让它大于 $0.2$）。
@@ -164,7 +164,7 @@ $$
    （展开可见 $E_x'=\frac{E_x+sE_y}{\sqrt{1+s^2}}$，$E_y'=\frac{sE_x+E_y}{\sqrt{1+s^2}}$，剪切角为 $\arctan s$。）
 3. **局部各向异性矩阵 $\mathbf A(a)$（Anisotropy）**：对两个正交方向施加一增一减的比例缩放：
    $$
-   \mathbf A(a)=\frac{1}{\sqrt{1-a^2}}\begin{pmatrix}1+a & 0\\ 0 & 1-a\end{pmatrix},\qquad |a|<1.
+   \mathbf A(a)=\frac{1}{\sqrt{1-a^2}}\begin{pmatrix}1+a & 0\\ 0 & 1-a\end{pmatrix},\qquad \lvert a\rvert<1.
    $$
 4. **测站增益 $g$（Site Gain）**：一个标量常数，把整个水平电场统一放大或缩小 $g$ 倍（它直接导致下一篇要讲的静态位移）。
 
@@ -282,7 +282,7 @@ $2\times 2$ 实矩阵 $\boldsymbol\Phi=\begin{pmatrix}a & b\\ c & d\end{pmatrix}
   $$
   \beta=\frac{1}{2}\operatorname{atan2}(b-c,\,a+d).
   $$
-  在理想二维结构中 $\beta=0$；一旦地下进入三维构造，$\beta$ 就会显著偏离零（经验上 $|\beta|>3^\circ\sim 5^\circ$ 常提示存在明显三维性）。
+  在理想二维结构中 $\beta=0$；一旦地下进入三维构造，$\beta$ 就会显著偏离零（经验上 $\lvert\beta\rvert>3^\circ\sim 5^\circ$ 常提示存在明显三维性）。
 
 ### 六、相位张量不是万能的：它丢掉了什么信息？
 

@@ -27,7 +27,7 @@ tags: [大地电磁, 阻抗张量, 数学基础]
 给观测阻抗 $\mathbf Z$ 乘上一系列候选角度 $\theta$ 的旋转矩阵，得到 $\mathbf Z'(\theta)=\mathbf R(\theta)\mathbf Z\mathbf R^T(\theta)$。经典的 **Swift 方法**试图寻找使非对角元能量最大化（等价于主对角元能量最小化）的角度 $\theta$：
 
 $$
-F(\theta)=|Z'_{xy}(\theta)|^2+|Z'_{yx}(\theta)|^2.
+F(\theta)=\lvert Z'_{xy}(\theta)\rvert^2+\lvert Z'_{yx}(\theta)\rvert^2.
 $$
 
 这种算法只依赖振幅大小，计算简单，但缺点也很明显：只要测站附近存在近地表电流性畸变（twist 或 shear），非对角元能量就会被扭曲，算出来的 Swift 走向就会明显偏离真实的深部构造方向。
@@ -42,9 +42,9 @@ $$
 
 ### 三、极坐标图（Polar / Peanut Diagram）
 
-让旋转角 $\theta$ 从 $0^\circ$ 转满 $360^\circ$，在极坐标系中以 $\theta$ 为方位角、以 $|Z'_{xx}(\theta)|$ 或 $|Z'_{xy}(\theta)|$ 为半径画图，就得到经典的**阻抗极坐标图**：
-- **一维模型**：$|Z'_{xy}(\theta)|$ 处处相等，画出来是一个**正圆**，$|Z'_{xx}|$ 缩成原点；
-- **二维模型**：$|Z'_{xy}(\theta)|$ 常呈对称的**花生状（peanut）**，$|Z'_{xx}(\theta)|$ 呈对称的**四叶草状**，四叶草的零点凹陷方向直接指示走向与倾向；
+让旋转角 $\theta$ 从 $0^\circ$ 转满 $360^\circ$，在极坐标系中以 $\theta$ 为方位角、以 $\lvert Z'_{xx}(\theta)\rvert$ 或 $\lvert Z'_{xy}(\theta)\rvert$ 为半径画图，就得到经典的**阻抗极坐标图**：
+- **一维模型**：$\lvert Z'_{xy}(\theta)\rvert$ 处处相等，画出来是一个**正圆**，$\lvert Z'_{xx}\rvert$ 缩成原点；
+- **二维模型**：$\lvert Z'_{xy}(\theta)\rvert$ 常呈对称的**花生状（peanut）**，$\lvert Z'_{xx}(\theta)\rvert$ 呈对称的**四叶草状**，四叶草的零点凹陷方向直接指示走向与倾向；
 - **三维模型**：图形失去对称性，出现明显歪斜。
 
 ### 四、抗畸变的走向算法：Bahr 法、WAL 法与相位张量主轴
@@ -96,7 +96,7 @@ $$
 其中 $Z_{\rm reg}$ 是未受浅部干扰的区域真实阻抗，$g$ 在整个研究频段内近似为常数。
 
 取 $g=2$ 看看会发生什么：
-- **模长翻倍**：$|Z_{\rm obs}|=2|Z_{\rm reg}|$；
+- **模长翻倍**：$\lvert Z_{\rm obs}\rvert=2\lvert Z_{\rm reg}\rvert$；
 - **相位纹丝不动**：因为 $2$ 是正实数，乘上正实数只会拉长复平面上的箭头，不会改变箭头的角度，因此
   $$
   \arg Z_{\rm obs}(\omega)=\arg Z_{\rm reg}(\omega).
@@ -104,11 +104,11 @@ $$
 
 ### 二、视电阻率曲线为什么会出现“平行上下平移”？
 
-把 $Z_{\rm obs}=gZ_{\rm reg}$ 代入视电阻率定义 $\rho_a=\dfrac{|Z|^2}{\omega\mu_0}$：
+把 $Z_{\rm obs}=gZ_{\rm reg}$ 代入视电阻率定义 $\rho_a=\dfrac{\lvert Z\rvert^2}{\omega\mu_0}$：
 
 $$
-\rho_{a,\rm obs}=\frac{|gZ_{\rm reg}|^2}{\omega\mu_0}=g^2\frac{|Z_{\rm reg}|^2}{\omega\mu_0}
-=\boxed{g^2\rho_{a,\rm obs\to reg}=g^2\rho_{a,\rm reg}}.
+\rho_{a,\rm obs}=\frac{\lvert gZ_{\rm reg}\rvert^2}{\omega\mu_0}=g^2\frac{\lvert Z_{\rm reg}\rvert^2}{\omega\mu_0}
+\implies \boxed{\rho_{a,\rm obs}=g^2\rho_{a,\rm reg}}.
 $$
 
 因为公式里有平方，当 $g=2$ 时，整条视电阻率曲线会放大 $2^2=4$ 倍；当 $g=0.5$ 时，整条曲线会缩小为原来的 $1/4$！
