@@ -1,422 +1,265 @@
 ---
-title: "10｜不变量、GB 畸变与相位张量｜合并完整版"
+title: "10｜旋转不变量、Groom–Bailey 畸变与相位张量"
 date: 2026-10-21
-modified: 2026-10-23
+modified: 2026-11-25
 permalink: /posts/2026/10/mt-course-06b-tensor-interpretation/
-excerpt: "合并关联内容，公式推导、例题、图片与自检题均完整保留。"
-tags: [大地电磁, 数学基础, 自学教程]
+excerpt: "构造不随旋转改变的 WAL 不变量诊断维度，拆解近地表局部导体引起的 Groom–Bailey 电流性畸变，并逐步推导相位张量如何抵消畸变。"
+tags: [大地电磁, 阻抗张量, 数学基础]
 ---
 {% include mt-course-math.html %}
 
-## 本篇目录
-- [数据分析 04｜WAL 不变量：不旋转坐标也能看出什么？](#sec-06d-invariants)
-- [数据分析 05｜近地表导体怎样扭曲电场：Groom–Bailey 畸变](#sec-06e-distortion)
-- [数据分析 06｜相位张量怎么来的：先用数字理解矩阵求逆](#sec-06f-phase-tensor)
+上一篇我们推导了阻抗张量的旋转公式 $\mathbf Z'=\mathbf R\mathbf Z\mathbf R^T$，也认识了迹和反迹两个基础旋转不变量。但在真实野外分析中，我们经常面临两个棘手局面：第一，电极方向还没旋转对齐地质走向时，如何先客观判断地下维数；第二，测站旁边如果埋着一块尺幅很小的浅部导电体，它会把区域电场扭曲得面目全非。本篇依次介绍系统的 WAL 不变量、Groom–Bailey 畸变分解，以及能够自动消除实数电流性畸变的相位张量。
+
+## 本篇路线图
+- [10.1 WAL 不变量：不旋转坐标也能看出什么？](#sec-06d-invariants)
+- [10.2 近地表导体怎样扭曲电场：Groom–Bailey 畸变](#sec-06e-distortion)
+- [10.3 相位张量怎么来的：先用数字理解矩阵求逆](#sec-06f-phase-tensor)
 
 
 ---
 
 <a id="sec-06d-invariants"></a>
-## 第1单元｜数据分析 04｜WAL 不变量：不旋转坐标也能看出什么？
+## 10.1 WAL 不变量：不旋转坐标也能看出什么？
 
-一份阻抗张量包含四个复数，也就是八个实数。把测量坐标转动之后，这些数通常会变。但如果我们希望判断地下结构是不是二维，最好不要让判断结果只取决于电极线恰好指向哪里。
+一份阻抗张量包含 $4$ 个复数，也就是 $8$ 个实数。只要旋转一下测量坐标系，这些数字就会跟着变。为了不让“地下是不是二维”的判断受限于电极线恰好朝哪个方向铺设，Weaver、Agarwal 和 Lilley 提出了一套完备的旋转不变量体系——**WAL 不变量**。
 
-因此需要**旋转不变量**。我们先从最简单的迹、反迹开始，再进入 WAL（Weaver–Agarwal–Lilley）不变量。
+### 一、先把八个实数重新排成四个复数组合
 
-### 一、什么是与旋转方向无关的量？
-
-上一篇已经推导
-
-$$\mathbf Z'=\mathbf R\mathbf Z\mathbf R^T.$$
-
-虽然 $Z_{xx}$ 等单个元素会变，但
-
-$$
-T=Z_{xx}+Z_{yy},\qquad A=Z_{xy}-Z_{yx}
-$$
-
-在纯水平旋转下保持不变。这是一个很实用的思路：将好几个元素组合，消去坐标角度带来的变化。
-
-别忘了复数需要同时考虑实部和虚部。例如 $Z_{xy}=3+2i$，其中实部为 3、虚部为 2。四个复数合起来是八个实数。
-
-### 二、把八个实数重新排成四个复数组合
-
-定义
+回顾迹和反迹这两个最简单的旋转不变量，我们把 $4$ 个复阻抗元素做如下线性重组：
 
 $$
 \begin{aligned}
-c_1&=\frac12(Z_{xx}+Z_{yy})=\xi_1+i\eta_1,\\
-c_2&=\frac12(Z_{xy}+Z_{yx})=\xi_2+i\eta_2,\\
-c_3&=\frac12(Z_{xx}-Z_{yy})=\xi_3+i\eta_3,\\
-c_4&=\frac12(Z_{xy}-Z_{yx})=\xi_4+i\eta_4.
+c_1&=\frac{1}{2}(Z_{xx}+Z_{yy})=\xi_1+i\eta_1,\\
+c_2&=\frac{1}{2}(Z_{xy}+Z_{yx})=\xi_2+i\eta_2,\\
+c_3&=\frac{1}{2}(Z_{xx}-Z_{yy})=\xi_3+i\eta_3,\\
+c_4&=\frac{1}{2}(Z_{xy}-Z_{yx})=\xi_4+i\eta_4.
 \end{aligned}
 $$
 
-这里 $\xi$ 读作 xi，$\eta$ 读作 eta，分别是对应组合的**实部与虚部**。八个实数仍然来自原先的四个复阻抗元素，只是换了一种排列方式。
+这里希腊字母 $\xi$（读作 xi）和 $\eta$（读作 eta）分别代表对应复数的**实部**和**虚部**。注意，这里没有引入任何新物理量，只是把原有的 $8$ 个实数换了一种更对称的排列方式（$c_1$ 是迹的一半，$c_4$ 是反迹的一半）。
 
-从定义一眼看出 $c_1$ 是迹的一半，$c_4$ 是反迹的一半。其余组合包含对角元之差和非对角元之和。
+### 二、WAL 前四个不变量 $I_1 \sim I_4$
 
-### 三、WAL 前四个不变量怎么计算？
-
-令
+由前一篇可知，在纯水平旋转下 $c_1$ 和 $c_4$ 严格不变，因此它们的实部模长和虚部模长也是旋转不变量：
 
 $$
-\boxed{I_1=\sqrt{\xi_1^2+\xi_4^2}},\qquad
-\boxed{I_2=\sqrt{\eta_1^2+\eta_4^2}}.
+\boxed{I_1=\sqrt{\xi_1^2+\xi_4^2}},\qquad \boxed{I_2=\sqrt{\eta_1^2+\eta_4^2}}.
 $$
 
-它们提供实部、虚部的重要尺度，但本身并不能独立判定地下维度。
-
-定义
+$I_1$ 和 $I_2$ 刻画了阻抗实部与虚部的总体能量尺度。接下来再看 $c_2$ 和 $c_3$：在坐标旋转时，$(\xi_2,\xi_3)$ 像二维平面向量一样旋转，其长度 $\sqrt{\xi_2^2+\xi_3^2}$ 保持不变；$(\eta_2,\eta_3)$ 同理。用总体尺度归一化后，得到无量纲不变量 $I_3$ 和 $I_4$：
 
 $$
-\boxed{I_3=\frac{\sqrt{\xi_2^2+\xi_3^2}}{I_1}},\qquad
-\boxed{I_4=\frac{\sqrt{\eta_2^2+\eta_3^2}}{I_2}}.
+\boxed{I_3=\frac{\sqrt{\xi_2^2+\xi_3^2}}{I_1}},\qquad \boxed{I_4=\frac{\sqrt{\eta_2^2+\eta_3^2}}{I_2}}.
 $$
 
-$I_3,I_4$ 表示偏离理想一维形式的某种程度：对于无噪声的一维各向同性响应，$c_2=c_3=0$，因此 $I_3=I_4=0$，前提是对应分母非零。
+在理想无噪声的一维各向同性地球中，$Z_{xx}=Z_{yy}=0$ 且 $Z_{xy}=-Z_{yx}$，于是 $c_2=c_3=0$，直接推出 $I_3=I_4=0$。因此 $I_3$ 和 $I_4$ 衡量的是实部与虚部偏离理想一维模型的程度。
 
-为什么会出现这些组合？在旋转坐标时，$(\xi_2,\xi_3)$ 会像一个二维向量一样混合，但它们长度 $\sqrt{\xi_2^2+\xi_3^2}$ 不变；$(\eta_2,\eta_3)$ 同理。因此构造这种模长比值，就能减少对电极方向的依赖。
+### 三、后面三个不变量 $I_5 \sim I_7$ 与派生指标 $Q$
 
-### 四、后面三个不变量为何复杂？
-
-为进一步检测复数响应中实部和虚部的相对方向、以及电流性畸变相关特征，先构造两组归一化组合。
-
-对 $i,j\in\{1,2,3,4\}$，令
+为了进一步检测复阻抗实部与虚部的方向是否一致、以及是否存在近地表电流性畸变，WAL 体系对 $i,j\in\{1,2,3,4\}$ 定义两组反对称与对称交叉组合：
 
 $$
-d_{ij}=
-\frac{\xi_i\eta_j-\xi_j\eta_i}{I_1I_2},
-\qquad
-s_{ij}=
-\frac{\xi_i\eta_j+\xi_j\eta_i}{I_1I_2}.
+d_{ij}=\frac{\xi_i\eta_j-\xi_j\eta_i}{I_1I_2},\qquad s_{ij}=\frac{\xi_i\eta_j+\xi_j\eta_i}{I_1I_2}.
 $$
 
-在某些写法中，分母也会显式写成 $\sqrt{\xi_1^2+\xi_4^2}\sqrt{\eta_1^2+\eta_4^2}$，意思相同。数学上分子像二维向量行列式与对称组合，可以反映两个方向之间的相对关系。
-
-在本节使用的 WAL 约定下：
+在此约定下，后三个旋转不变量写为：
 
 $$
 I_5=s_{41},\qquad I_6=d_{41},
 $$
 
 $$
-\boxed{
-I_7=\frac{d_{41}-d_{23}}
-{\sqrt{(d_{12}-d_{34})^2+(d_{13}+d_{24})^2}}.
-}
+\boxed{I_7=\frac{d_{41}-d_{23}}{\sqrt{(d_{12}-d_{34})^2+(d_{13}+d_{24})^2}}},
 $$
 
-此外可以定义派生指标
+同时定义派生指标 $Q=\sqrt{(d_{12}-d_{34})^2+(d_{13}+d_{24})^2}$。
+
+这套公式在数学上非常完备：原本 $8$ 个依赖坐标角度的实数，被提取成了 $7$ 个与坐标方向无关的旋转不变量（$I_1\sim I_7$），剩下的唯一自由度正好对应地质走向角！**计算提醒：** 当分母（如 $I_1,I_2$ 或 $Q$）接近零时，某些比值指标会趋于奇异或被噪声剧烈放大，此时应结合误差棒判断，不能机械填零。
+
+### 四、不同维度下 WAL 指标的特征
+
+- **理想一维（1D）**：$I_3=I_4=I_5=I_6=0$，$I_7$ 因分母为零而无定义；
+- **理想二维（2D）**（无局部畸变）：$I_3$ 或 $I_4$ 非零，但 $I_5=I_6=0$，$I_7=0$（或 $Q=0$ 无定义）；
+- **带电流性畸变的二维**：$I_5,I_6$ 可能非零，但在特定条件下 $I_7=0$；
+- **一般三维（3D）**：$I_7$ 显著偏离零。
+
+（实际应用中常取 $0.1$ 或 $0.15$ 作为判定“统计上接近零”的经验门槛，但具体阈值必须结合数据误差大小来评估。）
+
+### 五、经典的 Swift 偏斜度（Swift Skew）
+
+在 WAL 体系出现之前，地球物理学家最常用的是计算极其简便的 **Swift skew**：
 
 $$
-Q=\sqrt{(d_{12}-d_{34})^2+(d_{13}+d_{24})^2}.
+\boxed{\mathrm{skew}_S=\frac{|Z_{xx}+Z_{yy}|}{|Z_{xy}-Z_{yx}|}}.
 $$
 
-这样复杂的一串式子为什么有用？它将原本八个依赖坐标的实数提取成七个旋转不变量，剩余一个自由度可以对应方向角。**计算时一定要注意分母为零或数值很小时，某些指标会无定义或非常不稳定**。不能把无定义的结果机械记成 0。
+例如某频率测得 $Z_{xx}=0.1,\,Z_{yy}=0.1,\,Z_{xy}=4,\,Z_{yx}=-4$，则 $\mathrm{skew}_S=0.2/8=0.025$。无论在理想 1D 还是理想 2D 模型中，无论坐标系怎么旋转，主对角元之和 $Z_{xx}+Z_{yy}$ 恒为零，因此理论 Swift skew 恒等于 $0$；历史上常把 $\mathrm{skew}_S<0.2$ 作为二维近似的粗略筛查门槛。不过 Swift skew 容易受浅部三维畸变干扰（即使深部是标准二维，浅部小异常体也能让它大于 $0.2$）。
 
-### 五、这些指标在一维、二维时有什么特征？
+### 自我小测
 
-对于理想、无噪声的一维介质：$I_3$ 到 $I_6$ 为零，$I_7$ 可能无定义；对理想二维介质，$I_5$、$I_6$ 为零，$I_7$ 为零或无定义。非理想畸变和实际噪声会破坏这些严格等式。
+**1.** 推导 WAL 不变量时，为什么要大费周章把阻抗拆成 $I_1\sim I_7$？  
+**答：** 因为单个阻抗元素会随野外电极铺设方位角的改变而变化，通过构造旋转不变量，可以在不知道地质走向的前提下，客观提取出仅反映地下电性结构维数的特征指标。
 
-不同研究也曾使用 $0.1$ 或 $0.15$ 之类的经验阈值，将一个小数值视为“统计上接近零”。这些阈值与数据不确定度、处理方法相关，不应视为普适的物理常数。
+**2.** 某测点算出的 Swift skew 为 $0.08$（小于 $0.2$），能否百分之百确定该地区地下一定是二维结构？  
+**答：** 不能。小于 $0.2$ 只是与近一维或二维模型相容的经验门槛，某些对称三维结构也可能产生较小的 Swift skew，仍需结合相位张量、倾子和相邻测站综合判断。
 
-### 六、经典 Swift skew 又是什么？
+---
 
-一个计算很容易的经典指标是
+刚才我们多次提到“浅部小异常体”会把深部二维信号搅乱。这种近地表畸变究竟是怎么产生的？它又是如何把南北电场和东西电场拧在一起的？下一节我们就用 Groom–Bailey 畸变模型来解剖它。
 
-$$
-\boxed{
-\mathrm{skew}_{S}=
-\frac{|Z_{xx}+Z_{yy}|}{|Z_{xy}-Z_{yx}|}.
-}
-$$
-
-例如 $Z_{xx}=0.1$、$Z_{yy}=0.1$、$Z_{xy}=4$、$Z_{yx}=-4$，则
-
-$$
-\mathrm{skew}_{S}=\frac{0.2}{8}=0.025.
-$$
-
-它很小，与某种近一维或二维的简洁响应相容；不过浅部畸变和噪声也会影响它。经典经验上曾使用 0.2 作为一个粗略门槛，但不能因为某点低于 0.2 就宣布该地区一定二维。
-
-更复杂的 Bahr phase-sensitive skew 试图利用相位信息减少某类畸变影响；仍需要注意噪声较高时的稳定性。WAL 系列提供更系统的组合指标，但它们也无法单独解决全部地质结构判断。
-
-### 七、读完需要真正记住什么？
-
-不需要一口气背下 $I_1$ 到 $I_7$ 的所有下标。请先理解这三层逻辑：
-
-1. 四个复阻抗元素是原始输入；
-2. 将它们分成迹、反迹及对称/反对称组合，构造随旋转保持不变的量；
-3. 再结合这些量及其误差，判断哪些简化模型有希望解释数据。
-
-实际做维度分析时，还要同时考虑相位张量、区域地质走向、tipper、频率依赖与不同测点一致性。
-
-[下一节：Groom–Bailey 畸变分解](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06e-distortion)
+[继续阅读：10.2 近地表导体怎样扭曲电场：Groom–Bailey 畸变](#sec-06e-distortion)
 
 
 ---
 
 <a id="sec-06e-distortion"></a>
-## 第2单元｜数据分析 05｜近地表导体怎样扭曲电场：Groom–Bailey 畸变
+## 10.2 近地表导体怎样扭曲电场：Groom–Bailey 畸变
 
-想象我们真正关心的是十几千米深处的大型导电结构。可测站正好落在一小块浅部异常导体旁边，这个小体的尺度远小于区域构造，却会改变局部电流的方向和强弱。
-
-于是仪器测到的电场，可能是**区域电场经过局部结构重新分配以后形成的结果**。
+设想我们的目标是探测 $15\,\mathrm{km}$ 深处的地壳构造，可野外布站时，测站旁边几十米处恰好埋着一块几百米宽的浅部含水黏土囊或小矿体。这个小异常体的尺度远小于区域构造，却像一块磁石一样把周围的天然电流吸过去或者推开。结果仪器测到的电场，成了**区域真实电场经过局部障碍物重新分配后的扭曲版本**。
 
 ![浅部导体与局部电流畸变](/images/posts/mt-course/24-galvanic-distortion.svg)
 
-### 一、为什么“近地表异常”可能产生电场畸变？
+### 一、为什么浅部小异常体主要扭曲“电场”？——电流性畸变
 
-电导率不同的两个材料相接时，电流连续性和电磁边界条件可能导致界面上积累电荷，从而产生额外的局部电场。若异常体尺度远小于研究频带的特征电磁变化尺度，局部响应中的一部分可以近似看成频率无关的**电流性畸变**（galvanic distortion）。
-
-在这种理想近似里：
+当电流穿过电导率不同的岩性界面时，电荷会在界面上积累，产生一个附加的局部静电场（这种效应称为**电流性畸变，galvanic distortion**）。当异常体尺度远小于研究频带的趋肤深度时，这种局部电荷分布几乎不随频率变化，且对磁场的影响相对微弱，主要表现为把区域水平电场 $\mathbf E_{\rm reg}$ 乘上一个与频率无关的 **$2\times 2$ 实数畸变矩阵** $\mathbf C$：
 
 $$
 \boxed{\mathbf E_{\rm obs}=\mathbf C\mathbf E_{\rm reg}}.
 $$
 
-$\mathbf E_{\rm reg}$ 是我们希望知道的区域电场；$\mathbf E_{\rm obs}$ 是测到的电场；$\mathbf C$ 是 $2\times2$ **实数矩阵**。
+举个直观例子：假设 $\mathbf C=\begin{pmatrix}2 & 0\\ 0 & 1\end{pmatrix}$，区域真实电场为 $\mathbf E_{\rm reg}=(3,4)^T$，经过浅部异常体放大后，测站实测电场变成了 $\mathbf E_{\rm obs}=(6,4)^T$——北向电场被凭空拉长了两倍。
 
-举个简单例子：
+### 二、阻抗张量如何被畸变矩阵“污染”？
 
-$$
-\mathbf C=\begin{pmatrix}2&0\\0&1\end{pmatrix}.
-$$
-
-若区域电场是 $(3,4)^T$，那么观测电场就成为 $(6,4)^T$。你看，原本相同的物理区域场，在测点上被不同方向的比例放大了。
-
-### 二、为什么阻抗也会被畸变？
-
-如果暂时假设磁场不发生明显畸变，且区域电场满足
+假设磁场未受明显畸变，且区域背景满足 $\mathbf E_{\rm reg}=\mathbf Z_{\rm reg}\mathbf H$。代入上式：
 
 $$
-\mathbf E_{\rm reg}=\mathbf Z_{\rm reg}\mathbf H,
+\mathbf E_{\rm obs}=\mathbf C(\mathbf Z_{\rm reg}\mathbf H)=(\mathbf C\mathbf Z_{\rm reg})\mathbf H.
 $$
 
-代入上一式：
-
-$$
-\mathbf E_{\rm obs}
-=\mathbf C\mathbf Z_{\rm reg}\mathbf H.
-$$
-
-因此测得的阻抗是
+于是测站观测到的表观阻抗张量变成了
 
 $$
 \boxed{\mathbf Z_{\rm obs}=\mathbf C\mathbf Z_{\rm reg}}.
 $$
 
-因此即使区域结构接近二维，实测阻抗仍可能出现明显的对角项。浅部导电小体会使水平电场的两个方向发生混合，相当于让两个通道互相‘串门’。
+即使区域深部结构明明是理想二维（$\mathbf Z_{\rm reg}$ 主对角元为零），只要左乘一个非对角的实数矩阵 $\mathbf C$，实测阻抗 $\mathbf Z_{\rm obs}$ 的四个元素就会全都不为零！浅部导电小体就像让原本独立的南北、东西两个通道互相“串了门”。
 
-### 三、GB 分解试图怎样认识矩阵 C？
+### 三、Groom–Bailey（GB）分解：把畸变拆成四个几何动作
 
-Groom–Bailey（GB）分解把局部畸变视为若干具有较直观作用的运算组合。常见符号写作
+Groom 和 Bailey（1989）把抽象的 $2\times 2$ 实数畸变矩阵 $\mathbf C$ 分解成四个具有明确物理几何意义的基本操作：
 
 $$
 \boxed{\mathbf C=g\,\mathbf T\,\mathbf S\,\mathbf A},
 $$
 
-其中 $g$ 为 site gain（测站增益），$\mathbf T$ 为 twist（扭转），$\mathbf S$ 为 shear（剪切），$\mathbf A$ 为 anisotropy（各向异性增益）。不同文献使用的规范化和矩阵排列约定需要核对。
+1. **扭转矩阵 $\mathbf T(t)$（Twist）**：将区域电场向量整体旋转一个小角度 $\arctan t$：
+   $$
+   \mathbf T(t)=\frac{1}{\sqrt{1+t^2}}\begin{pmatrix}1 & -t\\ t & 1\end{pmatrix}.
+   $$
+2. **剪切矩阵 $\mathbf S(s)$（Shear）**：沿对称轴方向把正交的电场轴向彼此挤压成斜交，使两个方向的分量互相混入：
+   $$
+   \mathbf S(s)=\frac{1}{\sqrt{1+s^2}}\begin{pmatrix}1 & s\\ s & 1\end{pmatrix}.
+   $$
+   （展开可见 $E_x'=\frac{E_x+sE_y}{\sqrt{1+s^2}}$，$E_y'=\frac{sE_x+E_y}{\sqrt{1+s^2}}$，剪切角为 $\arctan s$。）
+3. **局部各向异性矩阵 $\mathbf A(a)$（Anisotropy）**：对两个正交方向施加一增一减的比例缩放：
+   $$
+   \mathbf A(a)=\frac{1}{\sqrt{1-a^2}}\begin{pmatrix}1+a & 0\\ 0 & 1-a\end{pmatrix},\qquad |a|<1.
+   $$
+4. **测站增益 $g$（Site Gain）**：一个标量常数，把整个水平电场统一放大或缩小 $g$ 倍（它直接导致下一篇要讲的静态位移）。
 
-为了先理解数学，取一种常用的示意参数化。扭转可写作一个旋转类矩阵：
+### 四、为什么单个测站、单个频率无法把畸变完全解开？
 
-$$
-\mathbf T(t)=\frac1{\sqrt{1+t^2}}
-\begin{pmatrix}1&-t\\t&1\end{pmatrix}.
-$$
+数一下自由度就明白了：在单个频率上，我们只测到 $4$ 个复数（$8$ 个实数）；而一个被畸变的二维模型同时包含区域走向角 $\theta$、区域二维阻抗的 $2$ 个复数（$4$ 个实数），再加上 $g,t,s,a$ 四个畸变参数，一共 $9$ 个未知数！更糟糕的是，局部各向异性 $\mathbf A$ 和测站增益 $g$ 会和区域二维阻抗的模长完全耦合在一起，单靠 MT 阻抗本身永远无法唯一分开（必须借助多频段联合拟合约束 $t,s$，并依靠外部资料约束增益 $g$）。
 
-它表示两个水平电场分量因局部效应而发生类似旋转的混合。参数 $t$ 控制这种“扭”的程度；其对应角度可由反正切表示。
+### 自我小测
 
-剪切可以示意为
+若局部畸变矩阵为 $\mathbf C=\begin{pmatrix}1 & 0.5\\ 0 & 1\end{pmatrix}$，区域真实电场为 $\mathbf E_{\rm reg}=(2,4)^T$，测站实际记录到的电场 $\mathbf E_{\rm obs}$ 是多少？  
+**答：** $\mathbf E_{\rm obs}=\begin{pmatrix}1 & 0.5\\ 0 & 1\end{pmatrix}\begin{pmatrix}2\\ 4\end{pmatrix}=\begin{pmatrix}2+0.5\times 4\\ 0+1\times 4\end{pmatrix}=\begin{pmatrix}4\\ 4\end{pmatrix}$。北向通道混进了 $0.5$ 倍的东向电场。
 
-$$
-\mathbf S(s)=\frac1{\sqrt{1+s^2}}
-\begin{pmatrix}1&s\\s&1\end{pmatrix}.
-$$
+---
 
-于是如果原区域电场为 $(E_x,E_y)^T$，剪切后的两个分量为
+既然实数畸变矩阵 $\mathbf C$ 这么难从单个测站里直接解出来，数学家们灵机一动：**能不能设计一种矩阵组合，在运算过程中让矩阵 $\mathbf C$ 自己和自己的逆矩阵 $\mathbf C^{-1}$ 相遇，从而自动抵消掉？** 这就是现代 MT 分析中最受欢迎的利器——相位张量（Phase Tensor）。
 
-$$
-E_x'=\frac{E_x+sE_y}{\sqrt{1+s^2}},\qquad
-E_y'=\frac{sE_x+E_y}{\sqrt{1+s^2}}.
-$$
-
-两条式子告诉我们：**测到的每个方向，都混入了原本另一个方向的场**。
-
-各向异性增益可以用类似
-
-$$
-\mathbf A(a)=\frac1{\sqrt{1-a^2}}
-\begin{pmatrix}1+a&0\\0&1-a\end{pmatrix},\qquad |a|<1
-$$
-
-的形式表示，它使两个方向的幅值按不同的比例变化。标量 $g$ 则使整个电场统一放大或缩小。上述因子可以采用不同的归一化形式，部分比例会被吸收入 $g$。
-
-### 四、为什么把四个效应分开仍很难唯一求出？
-
-假设只在一个频率、一个测站测到了四个复阻抗元素，共八个实数。我们不仅想恢复区域二维阻抗的两个复数分量，还要估计区域走向、局部扭转、剪切以及增益等参数。
-
-未知量过多，而且某些因子可互相补偿。例如整体放大 $g$ 与区域阻抗整体模长的改变，在单站数据里就可能无法区分。这意味着**测到一个完整阻抗张量，并不保证我们能唯一恢复全部畸变参数**。
-
-常见策略是跨多个频率与多个测点联合拟合，并对局部畸变的频率无关性、区域二维走向的一致性等提出约束。即便拟合效果好，绝对 site gain 通常仍可能存在不可辨识问题。
-
-### 五、畸变不是一种单一现象
-
-电流性（galvanic）畸变侧重界面电荷及局部电流重新分配；电感性（inductive）畸变与频率相关的感应电流、次生磁场有关。
-
-同一个浅部导体对不同频率和 TE/TM 模式可能产生不同影响。将所有异常响应简单叫作“静态位移”，会混淆幅值变化、方向混合与频率相关的效应。
-
-**自检：** 若 $\mathbf C=\begin{pmatrix}1&0.5\\0&1\end{pmatrix}$，区域场为 $(2,4)^T$，观测场是多少？答：$(4,4)^T$。因为 $E_x$ 混进了 $0.5E_y$。
-
-[下一节：相位张量为何能抵消实数电流性畸变？](/posts/2026/10/mt-course-06b-tensor-interpretation/#sec-06f-phase-tensor)
+[继续阅读：10.3 相位张量怎么来的：先用数字理解矩阵求逆](#sec-06f-phase-tensor)
 
 
 ---
 
 <a id="sec-06f-phase-tensor"></a>
-## 第3单元｜数据分析 06｜相位张量怎么来的：先用数字理解矩阵求逆
+## 10.3 相位张量怎么来的：先用数字理解矩阵求逆
 
-我们在上篇见到一个麻烦：观测到的阻抗可能是
+Caldwell、Bibby 和 Brown（2004）提出的**相位张量（Phase Tensor）**，完美回答了上一节结尾的设想：**在实数电流性畸变 $\mathbf Z_{\rm obs}=\mathbf C\mathbf Z_{\rm reg}$ 下，通过把阻抗矩阵拆成实部和虚部再做矩阵求逆，能让未知的畸变矩阵 $\mathbf C$ 自动约掉！** 我们从最基础的二阶矩阵求逆一步步推演。
 
-$$
-\mathbf Z_{\rm obs}=\mathbf C\mathbf Z_{\rm reg},
-$$
+### 一、把复数阻抗矩阵拆成“实部矩阵”和“虚部矩阵”
 
-其中 $\mathbf C$ 表示近地表的实数电流性畸变矩阵。能不能构造某个数学量，利用矩阵运算让 $\mathbf C$ 自动抵消？
-
-这正是**相位张量（phase tensor）**的重要动机。为了真正理解它，我们先从最容易算的二阶矩阵开始。
-
-### 一、为什么要把复数矩阵分开？
-
-四个复阻抗元素都可以写成“实部+虚部”。所以整个矩阵可记作
+任何复阻抗矩阵都可以按实部和虚部拆成两个 $2\times 2$ **实数矩阵**之和：
 
 $$
-\boxed{\mathbf Z=\mathbf X+i\mathbf Y}.
+\boxed{\mathbf Z=\mathbf X+i\mathbf Y},
 $$
 
-$\mathbf X$ 表示四个元素实部组成的实矩阵，$\mathbf Y$ 表示虚部组成的实矩阵。这里的 $X,Y$ 是**两个完整矩阵**，不是横坐标 $x,y$；符号相近但意义不同。
+其中 $\mathbf X=\operatorname{Re}(\mathbf Z)$ 存放四个元素的实部，$\mathbf Y=\operatorname{Im}(\mathbf Z)$ 存放四个元素的虚部（注意这里的粗体 $\mathbf X,\mathbf Y$ 是 $2\times 2$ 矩阵，不要和坐标轴 $x,y$ 混淆）。
 
-例如
-
-$$
-\mathbf Z=
-\begin{pmatrix}1+2i&3+i\\2-i&4+3i\end{pmatrix},
-$$
-
-则
+例如，若 $\mathbf Z=\begin{pmatrix}1+2i & 3+i\\ 2-i & 4+3i\end{pmatrix}$，则
 
 $$
-\mathbf X=\begin{pmatrix}1&3\\2&4\end{pmatrix},
-\quad
-\mathbf Y=\begin{pmatrix}2&1\\-1&3\end{pmatrix}.
+\mathbf X=\begin{pmatrix}1 & 3\\ 2 & 4\end{pmatrix},\qquad \mathbf Y=\begin{pmatrix}2 & 1\\ -1 & 3\end{pmatrix}.
 $$
 
-### 二、矩阵的“倒数”究竟是什么？
+### 二、二阶矩阵的“倒数”——逆矩阵怎么算？
 
-普通数字里 $3\times(1/3)=1$。矩阵中对应的概念是**逆矩阵**：
-
-$$
-\mathbf X^{-1}\mathbf X=\mathbf I,
-$$
-
-其中 $\mathbf I=\begin{pmatrix}1&0\\0&1\end{pmatrix}$。不是什么矩阵都有逆；例如两行完全成比例，逆矩阵便不存在。
-
-对
+实数里 $3$ 的倒数是 $1/3$，满足 $(1/3)\times 3=1$。矩阵里的“倒数”叫作**逆矩阵** $\mathbf X^{-1}$，满足
 
 $$
-\mathbf X=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+\mathbf X^{-1}\mathbf X=\mathbf I=\begin{pmatrix}1 & 0\\ 0 & 1\end{pmatrix}.
 $$
 
-若行列式 $ad-bc\ne0$，逆矩阵为
+对于 $2\times 2$ 矩阵 $\mathbf X=\begin{pmatrix}a & b\\ c & d\end{pmatrix}$，只要行列式 $D=ad-bc\ne 0$，它的逆矩阵就有一个极其好记的口诀（主对角线互换，副对角线变号，再除以行列式）：
 
 $$
-\boxed{\mathbf X^{-1}=\frac1{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}.}
+\boxed{\mathbf X^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d & -b\\ -c & a\end{pmatrix}}.
 $$
 
-这条公式可以靠乘法验证。比如
+拿对角矩阵 $\mathbf X=\begin{pmatrix}2 & 0\\ 0 & 4\end{pmatrix}$ 验证一下：行列式 $D=2\times 4-0=8$，于是 $\mathbf X^{-1}=\frac{1}{8}\begin{pmatrix}4 & 0\\ 0 & 2\end{pmatrix}=\begin{pmatrix}1/2 & 0\\ 0 & 1/4\end{pmatrix}$，相乘刚好等于单位矩阵 $\mathbf I$。
 
-$$
-\mathbf X=\begin{pmatrix}2&0\\0&4\end{pmatrix},
-\quad
-\mathbf X^{-1}=\begin{pmatrix}1/2&0\\0&1/4\end{pmatrix}.
-$$
+### 三、相位张量 $\boldsymbol\Phi$ 的定义与手算演示
 
-相乘确实是单位矩阵。它就像分别把两个方向上放大的 2 倍与 4 倍缩回去。
-
-### 三、亲手算一个相位张量
-
-定义
+相位张量定义为实部矩阵的逆乘以虚部矩阵：
 
 $$
 \boxed{\boldsymbol\Phi=\mathbf X^{-1}\mathbf Y}.
 $$
 
-假设阻抗实部、虚部为
+拿刚才的 $\mathbf X=\begin{pmatrix}2 & 0\\ 0 & 4\end{pmatrix}$ 和 $\mathbf Y=\begin{pmatrix}1 & 0\\ 0 & 2\end{pmatrix}$ 算一遍：
 
 $$
-\mathbf X=\begin{pmatrix}2&0\\0&4\end{pmatrix},
-\quad
-\mathbf Y=\begin{pmatrix}1&0\\0&2\end{pmatrix}.
+\boldsymbol\Phi=\begin{pmatrix}1/2 & 0\\ 0 & 1/4\end{pmatrix}\begin{pmatrix}1 & 0\\ 0 & 2\end{pmatrix}=\begin{pmatrix}1/2 & 0\\ 0 & 1/2\end{pmatrix}.
 $$
 
-因为 $\mathbf X^{-1}=\begin{pmatrix}1/2&0\\0&1/4\end{pmatrix}$，所以
+注意它是一个纯粹的 $2\times 2$ **实数矩阵**，元素全为无量纲实数（在一维模型中 $\Phi_{xx}=\Phi_{yy}=\tan\phi$，这也是它得名“相位张量”的原因）。
+
+### 四、核心见证：为什么近地表畸变矩阵 $\mathbf C$ 会自动抵消？
+
+现在设观测阻抗受到实数电流性畸变矩阵 $\mathbf C$ 的污染：
 
 $$
-\boldsymbol\Phi=
-\begin{pmatrix}1/2&0\\0&1/4\end{pmatrix}
-\begin{pmatrix}1&0\\0&2\end{pmatrix}
-=
-\begin{pmatrix}1/2&0\\0&1/2\end{pmatrix}.
+\mathbf Z_{\rm obs}=\mathbf C\mathbf Z_{\rm reg}=\mathbf C(\mathbf X+i\mathbf Y).
 $$
 
-它是一个实数矩阵，并且四个阻抗复数中的幅值信息已经被一定程度上消去。
-
-### 四、最重要的证明：为什么畸变会抵消？
-
-我们假设只有近地表实数电流性电场畸变，且磁场不受对应畸变：
+**关键就在这里：因为 $\mathbf C$ 是纯实数矩阵，它不会把实部和虚部搅在一起！** 因此观测到的实部矩阵和虚部矩阵直接满足：
 
 $$
-\mathbf Z_{\rm obs}=\mathbf C\mathbf Z_{\rm reg}.
+\mathbf X_{\rm obs}=\mathbf C\mathbf X,\qquad \mathbf Y_{\rm obs}=\mathbf C\mathbf Y.
 $$
 
-把区域阻抗写为
+代入相位张量的定义 $\boldsymbol\Phi_{\rm obs}=\mathbf X_{\rm obs}^{-1}\mathbf Y_{\rm obs}$：
 
 $$
-\mathbf Z_{\rm reg}=\mathbf X+i\mathbf Y.
+\boldsymbol\Phi_{\rm obs}=(\mathbf C\mathbf X)^{-1}(\mathbf C\mathbf Y).
 $$
 
-因为 $\mathbf C$ 是实矩阵，所以
-
-$$
-\mathbf Z_{\rm obs}
-=\mathbf C\mathbf X+i\mathbf C\mathbf Y.
-$$
-
-这说明观测实部矩阵、虚部矩阵分别是
-
-$$
-\mathbf X_{\rm obs}=\mathbf C\mathbf X,
-\quad
-\mathbf Y_{\rm obs}=\mathbf C\mathbf Y.
-$$
-
-按相位张量定义：
-
-$$
-\boldsymbol\Phi_{\rm obs}
-=(\mathbf C\mathbf X)^{-1}(\mathbf C\mathbf Y).
-$$
-
-我们需要一个关于矩阵求逆的规则：
-
-$$
-(\mathbf A\mathbf B)^{-1}=\mathbf B^{-1}\mathbf A^{-1}.
-$$
-
-逆矩阵的顺序可以直接验算：$(\mathbf A\mathbf B)(\mathbf B^{-1}\mathbf A^{-1})=\mathbf A\mathbf I\mathbf A^{-1}=\mathbf I$。因此乘积的逆要写成 $\mathbf B^{-1}\mathbf A^{-1}$。矩阵乘法有先后顺序，这一点和普通数字乘法不同。
-
-因此
+利用矩阵乘积求逆的“穿脱鞋法则” $(\mathbf A\mathbf B)^{-1}=\mathbf B^{-1}\mathbf A^{-1}$（先穿袜子再穿鞋，脱的时候必须先脱鞋再脱袜子；验证：$(\mathbf A\mathbf B)(\mathbf B^{-1}\mathbf A^{-1})=\mathbf A\mathbf I\mathbf A^{-1}=\mathbf I$）：
 
 $$
 \begin{aligned}
@@ -427,89 +270,34 @@ $$
 \end{aligned}
 $$
 
-看到了吗？中间的 $\mathbf C^{-1}\mathbf C$ 等于单位矩阵，于是某一类电流性畸变被消去了。
+中间的 $\mathbf C^{-1}\mathbf C$ 完美抵消成了单位矩阵！这意味着**无论浅部小异常体把电场扭曲成什么样子（只要畸变矩阵 $\mathbf C$ 可逆且在研究频段内近似为实数、磁场无畸变），算出来的相位张量 $\boldsymbol\Phi_{\rm obs}$ 都和深部未受畸变的区域相位张量 $\boldsymbol\Phi_{\rm reg}$ 完全一致！**
 
-这个结论的条件非常重要：$\mathbf C$ 与 $\mathbf X$ 要可逆，$\mathbf C$ 要在研究频带内适合用实矩阵描述，磁场畸变可忽略，并且其他更复杂的频率相关感应影响不能直接等同于这一模型。
-
-### 五、相位张量元素怎么实际计算？
-
-令
-
-$$
-\mathbf X=\begin{pmatrix}X_{xx}&X_{xy}\\X_{yx}&X_{yy}\end{pmatrix},
-\quad
-\mathbf Y=\begin{pmatrix}Y_{xx}&Y_{xy}\\Y_{yx}&Y_{yy}\end{pmatrix}.
-$$
-
-行列式是
-
-$$
-D=X_{xx}X_{yy}-X_{xy}X_{yx}.
-$$
-
-根据二阶逆矩阵公式：
-
-$$
-\boldsymbol\Phi=\frac1D
-\begin{pmatrix}
-X_{yy}Y_{xx}-X_{xy}Y_{yx}&X_{yy}Y_{xy}-X_{xy}Y_{yy}\\
-X_{xx}Y_{yx}-X_{yx}Y_{xx}&X_{xx}Y_{yy}-X_{yx}Y_{xy}
-\end{pmatrix}.
-$$
-
-当 $D$ 接近零时，求逆会非常不稳定，噪声可被显著放大。这是实际相位张量估计必须检查的数值问题。
-
-### 六、为什么要把相位张量画成椭圆？
+### 五、把相位张量画成椭圆（Phase Tensor Ellipse）
 
 ![相位张量的圆和椭圆示意](/images/posts/mt-course/25-phase-tensor-ellipse.svg)
 
-一个二维矩阵可以描述不同方向上的变换。对相位张量常采用主轴、椭圆率和偏斜角绘制椭圆：椭圆长短轴反映不同主方向的响应差异，方向角描述其方位，颜色还可表示偏斜或其他指标。
+$2\times 2$ 实矩阵 $\boldsymbol\Phi=\begin{pmatrix}a & b\\ c & d\end{pmatrix}$ 在几何上可以把一个单位圆映射成一个椭圆。科研论文中几乎都会把每个测站、每个周期的相位张量画成椭圆：
+- **理想一维各向同性地球**：$\boldsymbol\Phi$ 与单位矩阵成比例，画出来是一个**正圆**；
+- **理想二维地球**：椭圆被拉长，主轴方向（由方向角 $\alpha-\beta$ 决定）指示区域地质走向（或垂直走向），椭圆内部通常用**偏斜角 $\beta$** 填色：
+  $$
+  \beta=\frac{1}{2}\operatorname{atan2}(b-c,\,a+d).
+  $$
+  在理想二维结构中 $\beta=0$；一旦地下进入三维构造，$\beta$ 就会显著偏离零（经验上 $|\beta|>3^\circ\sim 5^\circ$ 常提示存在明显三维性）。
 
-理想一维各向同性结构的相位张量与单位矩阵成比例，通常绘成圆。理想二维模型在走向坐标中无偏斜，主轴方向与地质走向及其垂直方向有关。对于实际资料，椭圆拉长还可能反映噪声、各向异性或三维结构，因此要结合偏斜角、tipper 和邻近测站一起判断。
+### 六、相位张量不是万能的：它丢掉了什么信息？
 
-### 七、四个值得认识的数
+原始复阻抗 $\mathbf Z$ 包含 $8$ 个实数，而相位张量 $\boldsymbol\Phi$ 只有 $4$ 个实数——在 $\mathbf X^{-1}\mathbf Y$ 相除的过程中，**阻抗的绝对振幅标尺（即整体电阻率高低信息）被约掉了**。因此，相位张量是诊断地质维数、走向和三维性的黄金工具，但要做定量电阻率成像，最终仍需结合完整阻抗幅相数据进行三维反演。
 
-记
+### 自我小测
 
-$$
-\boldsymbol\Phi=
-\begin{pmatrix}a&b\\c&d\end{pmatrix}.
-$$
+**1.** 推导 $\boldsymbol\Phi_{\rm obs}=\boldsymbol\Phi_{\rm reg}$ 时，为什么要求畸变矩阵 $\mathbf C$ 必须是“实数矩阵”？  
+**答：** 只有当 $\mathbf C$ 是实数矩阵时，$\mathbf C(\mathbf X+i\mathbf Y)=\mathbf C\mathbf X+i\mathbf C\mathbf Y$ 才能保证实部和虚部各自独立左乘 $\mathbf C$，从而在 $\mathbf X_{\rm obs}^{-1}\mathbf Y_{\rm obs}$ 中精准消去。如果 $\mathbf C$ 含有虚部（电感性畸变），实部与虚部就会交叉混合，无法直接约掉。
 
-可以构造
+**2.** 已知 $\mathbf X=2\mathbf I$、$\mathbf Y=3\mathbf I$，求相位张量 $\boldsymbol\Phi$，它画出来是什么形状？  
+**答：** $\boldsymbol\Phi=(2\mathbf I)^{-1}(3\mathbf I)=\frac{3}{2}\mathbf I$，主对角元相等、非对角元为零，对应理想一维各向同性介质，画出来是一个**正圆**。
 
-$$
-\Phi_1=\frac{a+d}{2},\quad
-\Phi_2=ad-bc,\quad
-\Phi_3=\frac{b-c}{2}.
-$$
+---
 
-它们分别涉及迹、行列式和反对称部分。常用的方向参数为
+相位张量为我们拨开了近地表电流性畸变的迷雾。下一篇是第三阶段的收官篇：我们将综合运用 Swift、Bahr、WAL 和相位张量来寻找区域地质走向，并专门剖析那个最容易骗过反演程序的“静态位移”现象。
 
-$$
-\alpha=\frac12\operatorname{atan2}(b+c,a-d),
-$$
-
-$$
-\beta=\frac12\operatorname{atan2}(b-c,a+d).
-$$
-
-$\operatorname{atan2}(y,x)$ 与普通 $\arctan(y/x)$ 不同，它能利用分子与分母的符号处理象限。$\beta$ 常叫相位张量偏斜角，理想二维模型有 $\beta=0$，一般三维结构可能得到非零值；但噪声及接近退化的矩阵会使角度估计不稳定。
-
-还可定义归一化各向异性指标
-
-$$
-\lambda=
-\frac{\sqrt{(a-d)^2+(b+c)^2}}
-{\sqrt{(a+d)^2+(b-c)^2}},
-$$
-
-分母须非零。它与 $\beta$ 可共同辅助维度判断：理想一维两者都为零，理想二维一般 $\beta=0$ 但 $\lambda$ 可以非零；不能把这些理想条件无条件套在有噪声数据上。
-
-### 八、相位张量不能做什么？
-
-相位张量只有四个实数分量，原始复阻抗则包含八个实数分量。构造相位张量时，部分幅度信息已被消去；它适合诊断电性维数与方向性，恢复完整阻抗或进行幅相联合反演时仍需要原始数据。
-
-**练习：** 若 $\mathbf X=2\mathbf I$、$\mathbf Y=3\mathbf I$，则 $\boldsymbol\Phi=(3/2)\mathbf I$，对应理想的各向同性相位张量形态。
-
-[下一节：走向估计与维度诊断](/posts/2026/10/mt-course-06c-strike-static/#sec-06g-strike)
+[继续阅读：11｜地质走向估计、极坐标图与静态位移](/posts/2026/10/mt-course-06c-strike-static/) · [返回总目录](/posts/2026/10/mt-course/)
